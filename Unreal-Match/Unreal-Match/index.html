@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="UnrealMatch">
+<head>
+    <title>Unreal Match</title>
+    <meta charset="utf-8" />
+    <!--Styles-->
+    <link href="Resources/Styles/ui.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="Resources/Images/Interface/Elements/favicon.png">
+</head>
+<body ng-controller="MainController">
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+            <div class="content">
+                <a class="navigation-link back-link " 
+                   ng-click="toPreviousScreen()" 
+                   data-gamepad-navigation-namespace="menu" 
+                   data-gamepad-navigation-type="button" 
+                   data-gamepad-navigation-order="0" 
+                   data-gamepad-navigation-back>back</a>
+                <div ui-view class="shard-transition"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--Scripts-->
+<script src="Resources/Scripts/UI/ui.js"></script>
+</html>

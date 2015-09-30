@@ -1,0 +1,199 @@
+﻿/*additional rules to reset css*/
+* {
+    outline: none;
+    cursor: url(../Images/Interface/Elements/cursor-black.png), crosshair;
+}
+
+/////////////////////////////////////////////////////// backgrounds
+
+/*backgrounds stretch*/
+html, body, .content-wrapper {
+    height: 100%;
+}
+
+/* dotted pattern */
+.page-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Images/Interface/Backgrounds/menu-pattern.png');
+    background-repeat: repeat;
+}
+
+/* theme background */
+body {
+    background-image: url('../Images/Interface/Backgrounds/Levels/Rising-Sun.jpg');
+}
+
+.content-wrapper {
+    display: table-cell;
+    min-height: 500px;
+    vertical-align: middle;
+}
+
+/* carbon background */
+.content {
+    padding-top: 80px;
+    min-height: 600px;
+    background-image: url('../Images/Interface/Backgrounds/menu-background.png');
+    background-size: cover;
+}
+
+
+/////////////////////////////////////////////////////// links navigation
+
+// all links on the page which pequired background line
+.navigation-link {
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    background: none;
+    background-image: url('../Images/Interface/Elements/buttons-background.png');
+    background-repeat: no-repeat;
+
+    &:hover {
+        background-image: url('../Images/Interface/Elements/buttons-background.png');
+        color: #222;
+    }
+
+    &:active {
+        background-image: url('../Images/Interface/Elements/buttons-background.png');
+        color: white;
+    }
+}
+
+// for big navigation links; e.g: Join game, New Game etc
+.navigation-submenu {
+    background-image: none;
+    background-size: 50% 182px;
+    background-position: 50% -126px;
+
+    &:hover {
+        background-image: url('../Images/Interface/Elements/buttons-background.png');
+        background-position: 50% 0;
+        color: #222;
+    }
+
+    &:active {
+        background-image: url('../Images/Interface/Elements/buttons-background.png');
+        background-position: 50% -64px;
+        color: white;
+    }
+}
+
+
+/////////////////////////////////////////////////////// gamepad navigation
+
+// for gamepad navigation
+.navigation-submenu.navigation-current {
+    background-image: url('../Images/Interface/Elements/buttons-background.png');
+    color: black;
+
+    &:active {
+        color: white;
+    }
+}
+
+// back link, submit link
+.back-link.navigation-current, .submit-link.navigation-current {
+    background-position: 50% -45px;
+    color: white;
+}
+
+// highlight current input for gamepad navigation
+input.navigation-current {
+    box-shadow: 0 0 15px rgba(255,255,255,1);
+}
+
+
+/////////////////////////////////////////////////////// page forms and inputs
+
+.game-settings, .game-start, .game-join, .game-new, .game-input {
+    color: white;
+}
+
+// back navigation link and form submit
+.back-link, .submit-link {
+    margin-left: 10%;
+    background-size: 100% 127px;
+    background-position: 0 0;
+    color: black;
+    box-sizing: initial;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 10px;
+
+    &:hover {
+        background-position: 50% -45px;
+        color: white;
+    }
+
+    &:active {
+        background-position: 50% -88px;
+        color: black;
+    }
+}
+
+// gamepad buttons info
+.game-input-image {
+    display: block;
+    margin: 15px auto;
+    max-height: 400px;
+}
+
+// form title; e.g: Join game h1
+.title {
+    display: block;
+    text-align: center;
+    font-family: "OCR A Std";
+    font-size: 36px;
+    letter-spacing: -4px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.row {
+    margin: 10px 10% 0 10%;
+}
+
+.option-title {
+    font-family: "OCR A Std";
+    font-size: 18px;
+    letter-spacing: -3px;
+    margin-bottom: 2px;
+}
+
+form {
+    margin-top: 50px;
+
+    input, .option-title {
+        display: block;
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        float: right;
+        width: 117px;
+    }
+
+    // all blocks except checkbox
+    input[type=checkbox] {
+        display: inline;
+        width: auto;
+        margin: 0;
+    }
+
+    .low-video-label {
+        vertical-align: middle;
+        font-family: "OCR A Std";
+        font-size: 12px;
+        letter-spacing: -1px;
+    }
+}
+

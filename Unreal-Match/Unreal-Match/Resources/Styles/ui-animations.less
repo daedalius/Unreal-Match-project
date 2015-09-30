@@ -1,0 +1,39 @@
+﻿.content {
+    // to absolude childs positioning
+    position: relative;
+    // prevent scrollbar showing
+    overflow: hidden;
+}
+
+.shard-transition {
+    // on show
+    &.ng-enter {
+        transition: 0.1s;
+        // start properties
+        opacity: 0;
+        left: 100%;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+    }
+
+    &.ng-enter-active {
+        // end properties
+        opacity: 1;
+        left: 20%;
+    }
+    // on hide
+    &.ng-leave {
+        transition: 0.1s;
+        // start properties
+        width: 100%;
+        left: 20%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    &.ng-leave-active {
+        // end properties
+        left: 100%;
+    }
+}

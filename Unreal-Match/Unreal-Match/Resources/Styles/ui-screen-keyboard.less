@@ -1,0 +1,39 @@
+﻿.keyboard-wrapper, .select-wrapper {
+    position: relative;
+    height: 0;
+}
+
+.keyboard, .select {
+    display: inline-block;
+    width: 600px;
+    background-color: #2e2e2e;
+    text-align: center;
+}
+
+.key, .option {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    background-color: #2e2e2e;
+    color: white;
+    font-family: OCR A std;
+    padding-top: 20px;
+    font-size: 16px;
+
+    &:hover {
+        background-color: #d1d1d1;
+        color: #2e2e2e;
+    }
+}
+
+.key:active, .selected {
+    background-color: #f5f5f5;
+    color: #2e2e2e;
+}
+
+.option {
+    display: block;
+    width: auto;
+    text-align: left;
+}

@@ -1,0 +1,29 @@
+﻿<div class="game-settings">
+    <h1 class="title">Game Settings</h1>
+
+    <form>
+        <div class="row">
+            <p class="option-title">Nickname:</p>
+            <input type="text" class="player-name" name="nickname" value="" placeholder="Enter your nickname..." 
+                data-gamepad-navigation-namespace="menu"
+                data-gamepad-navigation-type="text"
+                data-gamepad-navigation-order="1"/>
+        </div>
+
+        <div class="row">
+            <p class="option-title">Low quality video mide:</p>
+            <input type="checkbox" class="low-video" id="low-video" ng-model="lowQualityVideoMode" 
+                data-gamepad-navigation-namespace="menu"
+                data-gamepad-navigation-type="checkbox"
+                data-gamepad-navigation-order="2"/>
+            <label class="low-video-label" for="low-video"></label>
+        </div>
+
+        <div class="row clear-container">
+            <button class="navigation-link submit-link" type="submit" name="game-select"
+                data-gamepad-navigation-namespace="menu"
+                data-gamepad-navigation-type="button"
+                data-gamepad-navigation-order="3">Apply</button>
+        </div>
+    </form>
+</div>

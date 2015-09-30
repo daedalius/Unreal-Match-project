@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{C32C03FE-0D2E-4144-B661-77F714F86E5C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="Resources\Images\Interface\Backgrounds\menu-background.png" />
+    <Content Include="Resources\Images\Interface\Backgrounds\menu-pattern.png" />
+    <Content Include="Resources\Images\Interface\Backgrounds\Levels\Rising-Sun.jpg" />
+    <Content Include="Resources\Images\Interface\Elements\buttons-background.png" />
+    <Content Include="Resources\Images\Interface\Elements\cursor-black.png" />
+    <Content Include="Resources\Images\Interface\Elements\cursor-white.png" />
+    <Content Include="Resources\Images\Interface\Elements\favicon.png" />
+    <Content Include="Resources\Images\Interface\Elements\gamepad-buttons.png" />
+    <Content Include="Resources\Scripts\Global\gamepad-connect.js" />
+    <Content Include="Resources\Scripts\Global\gamepad-input-callbacks.js" />
+    <Content Include="Resources\Scripts\Global\gamepad-input.js" />
+    <Content Include="Resources\Scripts\Global\gampad-initialize.js" />
+    <Content Include="Resources\Scripts\Global\namespace.js" />
+    <Content Include="Resources\Scripts\UI\application\app.js" />
+    <Content Include="Resources\Scripts\UI\application\routes.js" />
+    <Content Include="Resources\Scripts\UI\controllers\game-settings.controller.js" />
+    <Content Include="Resources\Scripts\UI\controllers\gamepad-info.controller.js" />
+    <Content Include="Resources\Scripts\UI\controllers\join-game.controller.js" />
+    <Content Include="Resources\Scripts\UI\controllers\main.controller.js" />
+    <Content Include="Resources\Scripts\UI\controllers\new-game.controller.js" />
+    <Content Include="Resources\Scripts\UI\controllers\start.controller.js" />
+    <Content Include="Resources\Scripts\UI\other\background-translations.js" />
+    <Content Include="Resources\Scripts\UI\other\gamepad-input-keyboard-callbacks.js" />
+    <Content Include="Resources\Scripts\UI\other\gamepad-input-menu-callbacks.js" />
+    <Content Include="Resources\Scripts\UI\other\gamepad-input-select-callbacks.js" />
+    <Content Include="Resources\Scripts\UI\other\gamepad-navigation.js" />
+    <Content Include="Resources\Scripts\UI\other\screen-keyboard.js" />
+    <Content Include="Resources\Scripts\UI\other\select-cycle.js" />
+    <Content Include="Resources\Scripts\UI\services\navigation.service.js" />
+    <Content Include="Resources\Scripts\UI\views\input.view.html" />
+    <Content Include="Resources\Scripts\UI\views\join.view.html" />
+    <Content Include="Resources\Scripts\UI\views\new.view.html" />
+    <Content Include="Resources\Scripts\UI\views\settings.view.html" />
+    <Content Include="Resources\Scripts\UI\views\start.view.html" />
+    <Content Include="Resources\Scripts\Vendors\angular-animate.min.js" />
+    <Content Include="Resources\Scripts\Vendors\angular-cookies.min.js" />
+    <Content Include="Resources\Scripts\Vendors\angular-ui-router.min.js" />
+    <Content Include="Resources\Scripts\Vendors\angular.min.js" />
+    <Content Include="Resources\Scripts\Vendors\jquery.min.js" />
+    <Content Include="Resources\Styles\clearfix.css" />
+    <Content Include="Resources\Styles\Fonts.css" />
+    <Content Include="Resources\Styles\Reset.css" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Styles\ui-animations.less" />
+    <Content Include="Resources\Styles\ui-menu.less" />
+    <Content Include="Resources\Styles\ui-screen-keyboard.less" />
+    <Content Include="Resources\Styles\ui.less" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\Game\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Unreal_Match</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52498</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52498/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>
