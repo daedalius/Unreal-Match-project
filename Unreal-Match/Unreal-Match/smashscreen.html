@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Resources/Scripts/Vendors/jquery.min.js"></script>
+    <script src="Resources/Scripts/Vendors/howler.min.js"></script>
+    <!--page styles-->
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden;
+        }
+    </style>
+
+    <!--reaper big-->
+    <style>
+        .reaper {
+            position: absolute;
+            height: 450px;
+            width: 546px;
+            right: -546px;
+            bottom: 57px;
+            background: url('Resources/Images/Interface/Elements/reaper.png');
+            background-size: 1092px 450px;
+            background-repeat: no-repeat;
+        }
+
+            .reaper.little {
+                height: 225px;
+                width: 273px;
+                background-size: 546px 225px;
+            }
+
+        .reaper-enter {
+            right: 0;
+            transition: right 0.2s ease-in;
+        }
+
+        .reaper-strafe-back {
+            right: -50px;
+            transition: right 0.4s;
+        }
+
+        .reaper-revert-direction {
+            background-position: -546px 0;
+        }
+
+            .reaper-revert-direction.little {
+                background-position: -273px 0;
+            }
+
+        .reaper-runaway {
+            transition: right 0.5s ease-in;
+            right: -200%;
+        }
+    </style>
+
+    <!--chunks enter-->
+    <style>
+        .chunk {
+            visibility: hidden;
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            bottom: 0;
+            right: 0;
+            background: url(Resources/Images/Interface/Elements/chunk.png);
+            background-size: 50px 100px;
+        }
+
+            .chunk.little {
+                width: 25px;
+                height: 50px;
+                background-size: 25px 50px;
+            }
+
+        .chunk-visible {
+            visibility: visible;
+        }
+
+        .ctl {
+            transform: rotate(-10deg);
+            bottom: 409px;
+            right: 463px;
+        }
+
+            .ctl.little {
+                bottom: 233px;
+                right: 233px;
+            }
+
+        .ctml {
+            transform: rotate(-60deg);
+            bottom: 354px;
+            right: 525px;
+        }
+
+            .ctml.little {
+                bottom: 202px;
+                right: 263px;
+            }
+
+
+        .cbml {
+            transform: rotate(-100deg);
+            bottom: 265px;
+            right: 509px;
+        }
+
+            .cbml.little {
+                bottom: 158px;
+                right: 258px;
+            }
+
+        .cbl {
+            transform: rotate(-160deg);
+            bottom: 193px;
+            right: 466px;
+        }
+
+            .cbl.little {
+                bottom: 121px;
+                right: 234px;
+            }
+
+        .ctr {
+            transform: rotate(22deg);
+            bottom: 402px;
+            right: 346px;
+        }
+
+            .ctr.little {
+                bottom: 234px;
+                right: 172px;
+            }
+
+        .ctmr {
+            transform: rotate(74deg);
+            bottom: 336px;
+            right: 295px;
+        }
+
+            .ctmr.little {
+                bottom: 196px;
+                right: 144px;
+            }
+
+        .cbmr {
+            transform: rotate(114deg);
+            bottom: 254px;
+            right: 309px;
+        }
+
+            .cbmr.little {
+                bottom: 153px;
+                right: 150px;
+            }
+
+        .cbr {
+            transform: rotate(160deg);
+            bottom: 196px;
+            right: 349px;
+        }
+
+            .cbr.little {
+                bottom: 124px;
+                right: 177px;
+            }
+    </style>
+
+    <!--chunks leave-->
+    <style>
+        .chunk-fly {
+            width: 400px;
+            height: 800px;
+            background-size: 400px 800px;
+            transition: all 0.4s;
+            visibility: hidden;
+        }
+
+        .tl {
+            bottom: 150% !important;
+        }
+
+        .tml {
+            bottom: 150% !important;
+            right: 150% !important;
+        }
+
+        .bml {
+            bottom: 20% !important;
+            right: 150% !important;
+        }
+
+        .bl {
+            bottom: -100% !important;
+            right: 40% !important;
+        }
+
+        .tr {
+            bottom: 100% !important;
+            right: -50% !important;
+        }
+
+        .tmr {
+            bottom: 50% !important;
+            right: -50% !important;
+        }
+
+        .bmr {
+            bottom: 30% !important;
+            right: -100% !important;
+        }
+
+        .br {
+            bottom: -100% !important;
+            right: -100% !important;
+        }
+    </style>
+    <!--logo-->
+    <style>
+        .logo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background: url(Resources/Images/Interface/Elements/logo-full-white.png);
+            background-size: 800px 368px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+            .logo.little {
+                background-size: 400px 184px;
+            }
+
+        .show-logo {
+            opacity: 1;
+            transition: all 2s;
+        }
+    </style>
+
+    <script>
+
+        var death = new Howl({
+            urls: ['Resources/Sounds/Smashscreen/death-hard.mp3']
+        });
+        var jump = new Howl({
+            urls: ['Resources/Sounds/Smashscreen/jump.mp3']
+        });
+        var meat = new Howl({
+            urls: ['Resources/Sounds/Smashscreen/death-meat.mp3']
+        });
+        var flak = new Howl({
+            urls: ['Resources/Sounds/Smashscreen/flak-main.mp3']
+        });
+
+        window.onload = function () {
+            if ($(window).width() < 1024 && $(window).height() < 768) {
+                $(document.body).children().addClass('little');
+            }
+            setTimeout(function myfunction() {
+
+                // show reaper
+                $("#reaper").addClass('reaper-enter');
+                jump.play();
+
+                setTimeout(function () {
+                    // make a shot
+                    flak.play();
+                    $(".chunk").addClass('chunk-visible');
+                    // strafe reaper back
+                    $("#reaper").addClass('reaper-strafe-back');
+
+                    setTimeout(function () {
+                        // leave chunks
+                        $(".chunk").addClass("chunk-fly")
+
+                        $(".ctl").addClass('tl');
+                        $(".ctml").addClass('tml');
+                        $(".cbml").addClass('bml');
+                        $(".cbl").addClass('bl');
+
+                        $(".ctr").addClass('tr');
+                        $(".ctmr").addClass('tmr');
+                        $(".cbmr").addClass('bmr');
+                        $(".cbr").addClass('br');
+
+                        // hide reaper
+                        $("#reaper").addClass('reaper-revert-direction');
+                        $("#reaper").addClass('reaper-runaway');
+
+                        setTimeout(function () {
+                            death.play();
+                            meat.play();
+
+                            // show logo
+                            $(".logo").addClass("show-logo");
+
+                            setTimeout(function () {
+                                location.href = 'index.html'
+                            },1500)
+
+                        }, 250)
+                    }, 750)
+                }, 500);
+
+            }, 1500);
+        }
+    </script>
+
+</head>
+<body>
+    <div class="logo white"></div>
+    <div id="reaper" class="reaper"></div>
+
+    <div class="chunk ctl"></div>
+    <div class="chunk ctml"></div>
+    <div class="chunk cbml"></div>
+    <div class="chunk cbl"></div>
+
+    <div class="chunk ctr"></div>
+    <div class="chunk ctmr"></div>
+    <div class="chunk cbmr"></div>
+    <div class="chunk cbr"></div>
+</body>
+</html>

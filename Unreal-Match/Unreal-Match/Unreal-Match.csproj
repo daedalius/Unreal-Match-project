@@ -27,10 +27,13 @@
     <Content Include="Resources\Images\Interface\Backgrounds\menu-pattern.png" />
     <Content Include="Resources\Images\Interface\Backgrounds\Levels\Rising-Sun.jpg" />
     <Content Include="Resources\Images\Interface\Elements\buttons-background.png" />
+    <Content Include="Resources\Images\Interface\Elements\chunk.png" />
     <Content Include="Resources\Images\Interface\Elements\cursor-black.png" />
     <Content Include="Resources\Images\Interface\Elements\cursor-white.png" />
     <Content Include="Resources\Images\Interface\Elements\favicon.png" />
     <Content Include="Resources\Images\Interface\Elements\gamepad-buttons.png" />
+    <Content Include="Resources\Images\Interface\Elements\reaper.png" />
+    <Content Include="Resources\Images\Interface\Elements\logo-full-white.png" />
     <Content Include="Resources\Scripts\Global\gamepad-connect.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input-callbacks.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input.js" />
@@ -61,10 +64,16 @@
     <Content Include="Resources\Scripts\Vendors\angular-cookies.min.js" />
     <Content Include="Resources\Scripts\Vendors\angular-ui-router.min.js" />
     <Content Include="Resources\Scripts\Vendors\angular.min.js" />
+    <Content Include="Resources\Scripts\Vendors\howler.min.js" />
     <Content Include="Resources\Scripts\Vendors\jquery.min.js" />
+    <Content Include="Resources\Sounds\Smashscreen\death-meat.mp3" />
+    <Content Include="Resources\Sounds\Smashscreen\flak-main.mp3" />
+    <Content Include="Resources\Sounds\Smashscreen\death-hard.mp3" />
+    <Content Include="Resources\Sounds\Smashscreen\jump.mp3" />
     <Content Include="Resources\Styles\clearfix.css" />
     <Content Include="Resources\Styles\Fonts.css" />
     <Content Include="Resources\Styles\Reset.css" />
+    <Content Include="smashscreen.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>

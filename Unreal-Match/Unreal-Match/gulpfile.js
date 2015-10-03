@@ -35,6 +35,9 @@ gulp.task('mainfiles', function() {
 					"./release/angular-ui-router.min.js"
 				]
 			},
+			"howler.js" : {
+				"main": "howler.min.js",
+			}
 		}
 	}))
     .pipe(gulp.dest('Resources/Scripts/Vendors'))
