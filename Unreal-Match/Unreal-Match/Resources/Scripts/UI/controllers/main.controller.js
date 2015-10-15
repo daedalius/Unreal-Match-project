@@ -20,6 +20,9 @@
             var Global = Namespace('UnrealMatch.Global');
             var UI = Namespace('UnrealMatch.UI');
 
+            UI.MenuSounds.initialize();
+            UI.MenuSounds.playTheme();
+
             UI.Select.prepareDocument();
 
             UI.BackgroundTranslations.initialize('body', {

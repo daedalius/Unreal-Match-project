@@ -50,8 +50,9 @@ gulp.task('cite-copy', function() {
 	// Resources folder
 	gulp.src('Resources/**/*', { "base" : "." }).pipe(gulp.dest(relativeOutputDirectoryPath));
 	// index.html
+	gulp.src('smashscreen.html').pipe(gulp.dest(relativeOutputDirectoryPath));
 	gulp.src('index.html').pipe(gulp.dest(relativeOutputDirectoryPath));
-	gulp.src('web.config').pipe(gulp.dest(relativeOutputDirectoryPath));	
+	gulp.src('web.Release.config').pipe(rename("web.config")).pipe(gulp.dest(relativeOutputDirectoryPath));	
 });
 
 gulp.task('full-deploy', ['ui-css', 'concat-ui-css', 'concat-ui-js', 'uglify-ui-js', 'cite-copy']);
@@ -88,6 +89,7 @@ gulp.task('concat-ui-js', function() {
 	gulp.src([
         // vendors
         'Resources/Scripts/Vendors/jquery.min.js',
+        'Resources/Scripts/Vendors/howler.min.js',
         'Resources/Scripts/Vendors/angular.min.js',
         'Resources/Scripts/Vendors/angular-animate.min.js',
         'Resources/Scripts/Vendors/angular-cookies.min.js',
@@ -103,7 +105,8 @@ gulp.task('concat-ui-js', function() {
         'Resources/Scripts/UI/other/select-cycle.js',       
         // application
 		'Resources/Scripts/UI/application/app.js',        
-        'Resources/Scripts/UI/application/routes.js',        
+        'Resources/Scripts/UI/application/routes.js',      
+        'Resources/Scripts/UI/other/menu-sounds.js',  
         'Resources/Scripts/UI/other/background-translations.js',
         'Resources/Scripts/UI/other/gamepad-navigation.js',
         'Resources/Scripts/UI/other/gamepad-input-keyboard-callbacks.js',

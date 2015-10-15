@@ -52,6 +52,7 @@
     <Content Include="Resources\Scripts\UI\other\gamepad-input-menu-callbacks.js" />
     <Content Include="Resources\Scripts\UI\other\gamepad-input-select-callbacks.js" />
     <Content Include="Resources\Scripts\UI\other\gamepad-navigation.js" />
+    <Content Include="Resources\Scripts\UI\other\menu-sounds.js" />
     <Content Include="Resources\Scripts\UI\other\screen-keyboard.js" />
     <Content Include="Resources\Scripts\UI\other\select-cycle.js" />
     <Content Include="Resources\Scripts\UI\services\navigation.service.js" />
@@ -66,6 +67,16 @@
     <Content Include="Resources\Scripts\Vendors\angular.min.js" />
     <Content Include="Resources\Scripts\Vendors\howler.min.js" />
     <Content Include="Resources\Scripts\Vendors\jquery.min.js" />
+    <Content Include="Resources\Sounds\Menu\menu-back.ogg" />
+    <Content Include="Resources\Sounds\Menu\menu-hover-light.ogg" />
+    <Content Include="Resources\Sounds\Menu\menu-hover.ogg" />
+    <Content Include="Resources\Sounds\Menu\menu-next.ogg" />
+    <Content Include="Resources\Sounds\Menu\menu-theme.mp3" />
+    <Content Include="Resources\Sounds\Menu\menu-back.mp3" />
+    <Content Include="Resources\Sounds\Menu\menu-hover-light.mp3" />
+    <Content Include="Resources\Sounds\Menu\menu-hover.mp3" />
+    <Content Include="Resources\Sounds\Menu\menu-next.mp3" />
+    <Content Include="Resources\Sounds\Menu\menu-theme.ogg" />
     <Content Include="Resources\Sounds\Smashscreen\death-meat.mp3" />
     <Content Include="Resources\Sounds\Smashscreen\flak-main.mp3" />
     <Content Include="Resources\Sounds\Smashscreen\death-hard.mp3" />
@@ -81,6 +92,7 @@
     <Content Include="Resources\Styles\ui-menu.less" />
     <Content Include="Resources\Styles\ui-screen-keyboard.less" />
     <Content Include="Resources\Styles\ui.less" />
+    <Content Include="Resources\Fonts\OCRA.ttf" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

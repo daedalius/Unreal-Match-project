@@ -3,7 +3,12 @@
 <head>
     <title>Unreal Match</title>
     <meta charset="utf-8" />
-    <!--Styles-->
+    <style>
+        /* for prevent showing white screen after smashscreen */
+        body {
+            background-color: black;
+        }
+    </style>
     <link href="Resources/Styles/ui.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="Resources/Images/Interface/Elements/favicon.png">
 </head>
@@ -11,7 +16,7 @@
     <div class="page-wrapper">
         <div class="content-wrapper">
             <div class="content">
-                <a class="navigation-link back-link " 
+                <a class="navigation-link back-link howl-hover howl-back" 
                    ng-click="toPreviousScreen()" 
                    data-gamepad-navigation-namespace="menu" 
                    data-gamepad-navigation-type="button" 

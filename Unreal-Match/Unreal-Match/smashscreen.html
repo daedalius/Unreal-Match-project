@@ -241,7 +241,6 @@
     </style>
 
     <script>
-
         var death = new Howl({
             urls: ['Resources/Sounds/Smashscreen/death-hard.mp3']
         });
@@ -255,12 +254,23 @@
             urls: ['Resources/Sounds/Smashscreen/flak-main.mp3']
         });
 
+        // cache menu theme
+        var theme = new Howl({
+            urls: ['Resources/Sounds/Menu/menu-theme.ogg', 'Resources/Sounds/Menu/menu-theme.mp3']
+        });
+
         window.onload = function () {
+            var timeoutStart = 1500;
+            var timeoutShot = 500;
+            var timeoutLeave = 750;
+            var timeoutScream = 250;
+            var timeoutMenu = 4000;
+
             if ($(window).width() < 1024 && $(window).height() < 768) {
                 $(document.body).children().addClass('little');
             }
-            setTimeout(function myfunction() {
 
+            setTimeout(function myfunction() {
                 // show reaper
                 $("#reaper").addClass('reaper-enter');
                 jump.play();
@@ -299,13 +309,11 @@
 
                             setTimeout(function () {
                                 location.href = 'index.html'
-                            },1500)
-
-                        }, 250)
-                    }, 750)
-                }, 500);
-
-            }, 1500);
+                            }, timeoutMenu);
+                        }, timeoutScream)
+                    }, timeoutLeave)
+                }, timeoutShot);
+            }, timeoutStart);
         }
     </script>
 
