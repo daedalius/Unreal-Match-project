@@ -254,17 +254,12 @@
             urls: ['Resources/Sounds/Smashscreen/flak-main.mp3']
         });
 
-        // cache menu theme
-        var theme = new Howl({
-            urls: ['Resources/Sounds/Menu/menu-theme.ogg', 'Resources/Sounds/Menu/menu-theme.mp3']
-        });
-
         window.onload = function () {
-            var timeoutStart = 1500;
+            var timeoutStart = 1000;
             var timeoutShot = 500;
             var timeoutLeave = 750;
             var timeoutScream = 250;
-            var timeoutMenu = 4000;
+            var timeoutMenu = 3000;
 
             if ($(window).width() < 1024 && $(window).height() < 768) {
                 $(document.body).children().addClass('little');

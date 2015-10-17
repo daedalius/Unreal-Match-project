@@ -2,7 +2,8 @@
     var themeHowl = new Howl({
         urls: ['/Resources/Sounds/Menu/menu-theme.ogg', '/Resources/Sounds/Menu/menu-theme.mp3'],
         volume: 0.7,
-        loop: true
+        loop: true,
+        buffer : true
     });
     var backHowl = new Howl({
         urls: ['/Resources/Sounds/Menu/menu-back.ogg', '/Resources/Sounds/Menu/menu-back.mp3']
