@@ -1,10 +1,13 @@
 ﻿Namespace("UnrealMatch.UI").MenuSounds = (function ($) {
+    Howler.iOSAutoEnable = true;
+
     var themeHowl = new Howl({
         urls: ['/Resources/Sounds/Menu/menu-theme.ogg', '/Resources/Sounds/Menu/menu-theme.mp3'],
         volume: 0.7,
         loop: true,
-        buffer : true
+        buffer: true
     });
+
     var backHowl = new Howl({
         urls: ['/Resources/Sounds/Menu/menu-back.ogg', '/Resources/Sounds/Menu/menu-back.mp3']
     });
@@ -24,7 +27,9 @@
         playHowerLight: playHowerLight,
         playBack: playBack,
         playNext: playNext,
-        playTheme: playTheme
+        playTheme: playTheme,
+        calmTheme: calmTheme,
+        stopTheme: stopTheme
     }
 
     function initialize() {
@@ -63,4 +68,13 @@
     function playTheme() {
         themeHowl.play();
     }
+
+    function calmTheme() {
+        themeHowl.volume(themeHowl.volume() / 4);
+    }
+
+    function stopTheme() {
+        themeHowl.stop()
+    }
+
 })(jQuery);

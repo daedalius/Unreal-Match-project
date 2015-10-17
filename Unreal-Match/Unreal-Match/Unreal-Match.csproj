@@ -41,6 +41,7 @@
     <Content Include="Resources\Scripts\Global\namespace.js" />
     <Content Include="Resources\Scripts\UI\application\app.js" />
     <Content Include="Resources\Scripts\UI\application\routes.js" />
+    <Content Include="Resources\Scripts\UI\controllers\game.controller.js" />
     <Content Include="Resources\Scripts\UI\controllers\game-settings.controller.js" />
     <Content Include="Resources\Scripts\UI\controllers\gamepad-info.controller.js" />
     <Content Include="Resources\Scripts\UI\controllers\join-game.controller.js" />
@@ -56,6 +57,7 @@
     <Content Include="Resources\Scripts\UI\other\screen-keyboard.js" />
     <Content Include="Resources\Scripts\UI\other\select-cycle.js" />
     <Content Include="Resources\Scripts\UI\services\navigation.service.js" />
+    <Content Include="Resources\Scripts\UI\views\game.view.html" />
     <Content Include="Resources\Scripts\UI\views\input.view.html" />
     <Content Include="Resources\Scripts\UI\views\join.view.html" />
     <Content Include="Resources\Scripts\UI\views\new.view.html" />
@@ -93,6 +95,7 @@
     <Content Include="Resources\Styles\ui-screen-keyboard.less" />
     <Content Include="Resources\Styles\ui.less" />
     <Content Include="Resources\Fonts\OCRA.ttf" />
+    <Content Include="Resources\Styles\game-basic.less" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

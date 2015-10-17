@@ -25,7 +25,7 @@
 
             UI.Select.prepareDocument();
 
-            UI.BackgroundTranslations.initialize('body', {
+            UI.BackgroundTranslations.initialize(document.body, {
                 x: 2372 * 2,
                 y: 1312 * 2
             });

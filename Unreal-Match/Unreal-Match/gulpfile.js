@@ -85,6 +85,24 @@ gulp.task('concat-ui-css', function () {
 	.pipe(gulp.dest('Resources/Styles'));
 });
 
+// compile ui less to css
+gulp.task('game-css', function() {
+	return gulp.src([
+        'Resources/Styles/game-basic.less'     
+	])
+	.pipe(less())
+    .pipe(gulp.dest('Resources/Styles'))
+});
+
+// merge all ui css in one file
+gulp.task('concat-game-css', function () {
+	gulp.src([
+        'Resources/Styles/game-basic.css'        
+	])
+	.pipe(concat('game.css'))
+	.pipe(gulp.dest('Resources/Styles'));
+});
+
 gulp.task('concat-ui-js', function() {	
 	gulp.src([
         // vendors
@@ -120,7 +138,8 @@ gulp.task('concat-ui-js', function() {
         'Resources/Scripts/UI/controllers/new-game.controller.js',	        
         'Resources/Scripts/UI/controllers/join-game.controller.js',	        
         'Resources/Scripts/UI/controllers/gamepad-info.controller.js',
-        'Resources/Scripts/UI/controllers/game-settings.controller.js'
+        'Resources/Scripts/UI/controllers/game-settings.controller.js',
+        'Resources/Scripts/UI/controllers/game.controller.js'
 	])
 	.pipe(concat('ui.js'))
     .pipe(gulp.dest('Resources/Scripts/UI'))

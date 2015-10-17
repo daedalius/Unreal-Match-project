@@ -33,5 +33,10 @@
                 templateUrl: "/Resources/Scripts/UI/views/settings.view.html",
                 controller: 'GameSettingsController'
             })
+            .state('/game', {
+                url: "/game",
+                templateUrl: "/Resources/Scripts/UI/views/game.view.html",
+                controller: 'GameController'
+            })
     }
 })();

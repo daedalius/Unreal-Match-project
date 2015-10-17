@@ -1,4 +1,4 @@
-﻿Namespace("UnrealMatch.UI").BackgroundTranslations = (function () {
+﻿Namespace("UnrealMatch.UI").BackgroundTranslations = (function () {$(document.body)
     var animationIntervalId;
 
     // current background size
@@ -36,8 +36,8 @@
 
     function takeScreenSize() {
         return {
-            x: $('body').innerWidth(),
-            y: $('body').innerHeight()
+            x: $(document.body).innerWidth(),
+            y: $(document.body).innerHeight()
         }
     }
 
@@ -82,7 +82,7 @@
         currentOffset.x = currentOffset.x + offsetX;
         currentOffset.y = currentOffset.y + offsetY;
 
-        $('body').css({ 'background-position': currentOffset.x + 'px ' + currentOffset.y + 'px' });
+        $(document.body).css({ 'background-position': currentOffset.x + 'px ' + currentOffset.y + 'px' });
         validateVector();
     }
 
@@ -104,6 +104,7 @@
     // destructor
     function destroy() {
         window.clearInterval(animationIntervalId);
+        $(document.body).removeAttr('style');
     }
 
     return {
