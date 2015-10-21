@@ -1,5 +1,13 @@
 ﻿<link href="/Resources/Styles/game.css" rel="stylesheet" />
 <div class="game"><!--
+ --><preloader class="disabled">
+        <div class="preloader-wrapper">
+            <img class="preloader-logo" src="/Resources/Images/Interface/Elements/logo-full-white.png" alt="" />
+            <div class="preloader-indicator-wrapper">
+                <div class="preloader-indicator"></div>
+            </div>
+        </div>
+    </preloader><!--
  --><cache id="game-cache-element">
 
     </cache><!--
@@ -8,3 +16,5 @@
      --><canvas id="game-canvas-element" width="800" height="450"></canvas><!--
  --></div>
 </div>
+
+<script data-main="/Resources/Scripts/Game/Cache/resource-loader" src="/Resources/Scripts/Vendors/require.min.js"></script>

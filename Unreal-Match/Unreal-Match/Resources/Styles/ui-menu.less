@@ -4,6 +4,10 @@
     cursor: url(../Images/Interface/Elements/cursor-black.png), crosshair;
 }
 
+.disabled {
+    display: none;
+}
+
 /////////////////////////////////////////////////////// backgrounds
 
 html {
@@ -27,6 +31,7 @@ html, body, .content-wrapper {
 /* theme background */
 body {
     background-image: url('../Images/Interface/Backgrounds/Levels/Rising-Sun.jpg');
+    -webkit-user-select: none;
 }
 
 .content-wrapper {
@@ -181,7 +186,7 @@ form {
         width: 100%;
     }
 
-    button[type="submit"] {
+    .submit-link {
         float: right;
         width: 117px;
     }

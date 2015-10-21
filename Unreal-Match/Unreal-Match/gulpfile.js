@@ -5,6 +5,22 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
 var uglifycss = require('gulp-uglifycss');
+var ts = require('gulp-typescript');
+var sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('game-ts', function() {
+    var tsResult = gulp.src('Resources/Scripts/Game/**/*.ts')
+                       .pipe(sourcemaps.init()) // This means sourcemaps will be generated 
+                       .pipe(ts({
+                           sortOutput: true,
+						   module : 'amd'
+                       }));
+    
+    return tsResult.js
+                .pipe(concat('game.js')) 
+                .pipe(sourcemaps.write()) 
+                .pipe(gulp.dest('Resources/Scripts/Game'));
+});
 
 // copy vendors libs from bower to Resources/Scripts/Vendors
 gulp.task('mainfiles', function() {
@@ -55,12 +71,14 @@ gulp.task('cite-copy', function() {
 	gulp.src('web.Release.config').pipe(rename("web.config")).pipe(gulp.dest(relativeOutputDirectoryPath));	
 });
 
-gulp.task('full-deploy', ['ui-css', 'concat-ui-css', 'concat-ui-js', 'uglify-ui-js', 'cite-copy']);
+// gulp full-deploy
+gulp.task('full-deploy', ['ui-css', 'concat-ui-css', 'concat-ui-js', 'uglify-ui-js', 'game-css', 'game-ts', 'cite-copy']);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 // compile ui less to css
+// gulp ui-css
 gulp.task('ui-css', function() {
 	return gulp.src([
         'Resources/Styles/ui-menu.less',	
@@ -72,6 +90,7 @@ gulp.task('ui-css', function() {
 });
 
 // merge all ui css in one file
+// gulp concat-ui-css
 gulp.task('concat-ui-css', function () {
 	gulp.src([		
 		'Resources/Styles/Reset.css',
@@ -86,6 +105,7 @@ gulp.task('concat-ui-css', function () {
 });
 
 // compile ui less to css
+// gulp game-css
 gulp.task('game-css', function() {
 	return gulp.src([
         'Resources/Styles/game-basic.less'     
@@ -94,7 +114,8 @@ gulp.task('game-css', function() {
     .pipe(gulp.dest('Resources/Styles'))
 });
 
-// merge all ui css in one file
+// merge all ui css in one file 
+// gulp concat-game-css
 gulp.task('concat-game-css', function () {
 	gulp.src([
         'Resources/Styles/game-basic.css'        
@@ -103,6 +124,7 @@ gulp.task('concat-game-css', function () {
 	.pipe(gulp.dest('Resources/Styles'));
 });
 
+// gulp concat-ui-js
 gulp.task('concat-ui-js', function() {	
 	gulp.src([
         // vendors

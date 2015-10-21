@@ -10,6 +10,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
     <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -34,6 +35,8 @@
     <Content Include="Resources\Images\Interface\Elements\gamepad-buttons.png" />
     <Content Include="Resources\Images\Interface\Elements\reaper.png" />
     <Content Include="Resources\Images\Interface\Elements\logo-full-white.png" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun-Passableness-Map.png" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun.jpg" />
     <Content Include="Resources\Scripts\Global\gamepad-connect.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input-callbacks.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input.js" />
@@ -69,6 +72,9 @@
     <Content Include="Resources\Scripts\Vendors\angular.min.js" />
     <Content Include="Resources\Scripts\Vendors\howler.min.js" />
     <Content Include="Resources\Scripts\Vendors\jquery.min.js" />
+    <Content Include="Resources\Scripts\Vendors\require.js" />
+    <Content Include="Resources\Sounds\Game\Levels\Rising-Sun.mp3" />
+    <Content Include="Resources\Sounds\Game\Levels\Rising-Sun.ogg" />
     <Content Include="Resources\Sounds\Menu\menu-back.ogg" />
     <Content Include="Resources\Sounds\Menu\menu-hover-light.ogg" />
     <Content Include="Resources\Sounds\Menu\menu-hover.ogg" />
@@ -103,8 +109,17 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\Images\Game\" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Other\preloader-screen.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Cache\image-resource.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Cache\audio-resource.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Cache\game-resource-interface.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

@@ -7,6 +7,10 @@
     function NewGameController($scope, $rootScope, navigation) {
         activate();
 
+        $scope.NewGame = function () {
+            navigation.toGame();
+        };
+
         function activate() {
             Namespace('UnrealMatch.UI').Select.preparePage();
 

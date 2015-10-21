@@ -19,6 +19,7 @@
     "angular-cookies": "1.4.4",
     "angular-ui-router": "0.2.15",
     "howler.js": "howler#~1.1.27",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "requirejs": "~2.1.20"
   }
 }

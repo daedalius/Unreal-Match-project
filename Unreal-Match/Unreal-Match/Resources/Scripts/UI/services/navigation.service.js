@@ -10,8 +10,10 @@
             toStart: function () {
                 $location.path("/start");
             },
+            toGame: function () {
+                $location.path("/game");
+            },
             isStart: function () {
-                console.log($location.path());
                 return ($location.path() == "/start")
             }
 
