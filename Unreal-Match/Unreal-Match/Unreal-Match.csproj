@@ -11,7 +11,7 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
-    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -24,6 +24,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\hq\guard-body.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\hq\guard-hands.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\hq\guard-head-blackjack.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\hq\guard-head-lauren.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\hq\guard-legs.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-body.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-hands.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-head-blackjack.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-head-lauren.png" />
+    <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-legs.png" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun-Path-Map.png" />
+    <Content Include="Resources\Images\Game\Weapons\hq.png" />
+    <Content Include="Resources\Images\Game\Weapons\lq.png" />
     <Content Include="Resources\Images\Interface\Backgrounds\menu-background.png" />
     <Content Include="Resources\Images\Interface\Backgrounds\menu-pattern.png" />
     <Content Include="Resources\Images\Interface\Backgrounds\Levels\Rising-Sun.jpg" />
@@ -35,7 +48,6 @@
     <Content Include="Resources\Images\Interface\Elements\gamepad-buttons.png" />
     <Content Include="Resources\Images\Interface\Elements\reaper.png" />
     <Content Include="Resources\Images\Interface\Elements\logo-full-white.png" />
-    <Content Include="Resources\Images\Game\Levels\Rising-Sun-Passableness-Map.png" />
     <Content Include="Resources\Images\Game\Levels\Rising-Sun.jpg" />
     <Content Include="Resources\Scripts\Global\gamepad-connect.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input-callbacks.js" />
@@ -109,8 +121,27 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Resources\Images\Game\Fractions\Liandri\" />
+    <Folder Include="Resources\Images\Game\Fractions\Necris\" />
+    <Folder Include="Resources\Images\Game\Fractions\Ronin\" />
+    <Folder Include="Resources\Scripts\Game\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerTransition.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDraw.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Objects\GameObject.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Objects\Player.Object.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Character.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Fraction.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Team.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\NormalizedVector.Primitive.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Point.Primitive.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Rectangle.Primitive.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\ScreenRectangle.Primitive.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Size.Primitive.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Vector.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Other\preloader-screen.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\image-resource.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\audio-resource.ts" />

@@ -13,7 +13,8 @@ gulp.task('game-ts', function() {
                        .pipe(sourcemaps.init()) // This means sourcemaps will be generated 
                        .pipe(ts({
                            sortOutput: true,
-						   module : 'amd'
+						   module : 'amd',
+						   target : 'es5'
                        }));
     
     return tsResult.js

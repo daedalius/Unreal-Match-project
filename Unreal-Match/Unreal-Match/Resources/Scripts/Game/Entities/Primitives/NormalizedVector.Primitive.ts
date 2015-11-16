@@ -1,4 +1,4 @@
-﻿import Vector = require('vector')
+﻿import Vector = require('Vector.Primitive')
 
 /** Present two-dimentional vector */
 class NormalizedVector extends Vector {

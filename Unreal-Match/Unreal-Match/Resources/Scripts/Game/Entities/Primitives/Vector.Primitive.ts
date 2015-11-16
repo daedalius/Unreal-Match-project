@@ -1,4 +1,4 @@
-﻿import NormalizedVector = require('normalized-vector');
+﻿import NormalizedVector = require('NormalizedVector.Primitive');
 
 /** Present two-dimentional vector */
 class Vector {

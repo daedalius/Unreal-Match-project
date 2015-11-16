@@ -1,4 +1,4 @@
-﻿import Vector = require('vector');
+﻿import Vector = require('Vector.Primitive');
 
 /** Present a point in two-dimentional space */
 class Point {

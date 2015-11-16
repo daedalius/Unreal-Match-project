@@ -1,5 +1,5 @@
-﻿import Point = require('point');
-import ScreenRectangle = require('screen-rectangle');
+﻿import Point = require('Point.Primitive');
+import ScreenRectangle = require('ScreenRectangle.Primitive');
 
 /** Presents rectangle in Cartesian CS */
 class Rectangle {

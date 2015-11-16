@@ -1,4 +1,4 @@
-﻿import Point = require('point');
+﻿import Point = require('Point.Primitive');
 
 /** Presents rectangle in Screen CS */
 class ScreenRectangle {

@@ -1,5 +1,6 @@
 ﻿/// <reference path='../../vendors/howler.d.ts' />
 /// <reference path='../../vendors/jquery.d.ts' />
+
 import IGameResource = require('game-resource-interface');
 import ResourceCache = require('resource-cache');
 
