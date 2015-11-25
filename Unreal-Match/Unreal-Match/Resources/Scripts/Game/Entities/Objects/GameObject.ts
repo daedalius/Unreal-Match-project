@@ -10,12 +10,14 @@ abstract class GameObject {
     private Components: Array<Component>;
 
     /** Get component of GameObject by name */
-    public GetComponent = function (name: string) {
+    public GetComponent = function (name: string): Component  {
         this.Components.forEach(function (itemComponent, index) {
-            if (name === itemComponent.Name) {
+            if (itemComponent.Name === name) {
                 return itemComponent;
             }
         });
+
+        return null;
     }
 
     /** Add component to GameObject */

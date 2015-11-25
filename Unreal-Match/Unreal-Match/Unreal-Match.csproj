@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerAmmunition.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerTransition.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDraw.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Objects\GameObject.ts" />
@@ -142,6 +143,8 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\ScreenRectangle.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Size.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Vector.Primitive.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\VideoMode.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Weapon.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Other\preloader-screen.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\image-resource.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\audio-resource.ts" />
@@ -149,6 +152,7 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Starter.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />
   </ItemGroup>

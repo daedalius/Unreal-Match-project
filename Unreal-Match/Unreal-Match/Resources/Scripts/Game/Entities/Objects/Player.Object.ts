@@ -16,7 +16,9 @@ class Player extends GameObject {
     /** Players team in current game */
     public Team: Team;
     /** Players character */
-    public Character: Character;
+    public Character: Character; 
+    /** Character fraction */
+    public Fraction: Fraction;
 
     constructor(id: number, position: Point, team: Team, character: Character) {
         super(id, position);

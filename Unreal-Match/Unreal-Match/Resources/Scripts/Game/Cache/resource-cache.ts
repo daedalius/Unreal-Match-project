@@ -73,6 +73,7 @@ class ResourceCache {
 
                 if (ResourceCache.LoadedPercent >= 100) {
                     PreloaderScreen.Hide();
+                    $('#game-cache-element').trigger('resources-loaded');
                 }
             })
         }

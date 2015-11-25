@@ -1,8 +1,13 @@
-﻿import Component = require('Component');
+﻿import ResourceCache = require('Cache/resource-cache');
+
+import Component = require('Component');
+import PlayerAmmunition = require('PlayerAmmunition.Component');
 
 import Player = require('../Objects/Player.Object');
 import GameObject = require('../Objects/GameObject');
 import Fraction = require('../../Enums/Fraction.Enum');
+import Character = require('../../Enums/Character.Enum');
+import Weapon = require('../../Enums/Weapon.Enum');
 
 import Size = require('../Primitives/Size.Primitive');
 import NormalizedVector = require('../Primitives/NormalizedVector.Primitive');
@@ -37,8 +42,50 @@ abstract class PlayerDrawComponent extends Component {
     public HeadSprite: HTMLImageElement;
     /** Cached player body image */
     public BodySprite: HTMLImageElement;
+    /** Cached player hands image */
+    public HandsSprite: HTMLImageElement;
+    /** Cached player legs image */
+    public LegsSprite: HTMLImageElement;
     /** Cached player weapon image */
     public WeaponSprite: HTMLImageElement;
+    /** Returns weapon offset rate in hand from shoulder */
+    protected GetWeaponOffsetFromShoulderSocket = function (): NormalizedVector {
+        var weapon = (<PlayerAmmunition>this.Object.GetComponent('PlayerAmmunition')).Current;
+        var x = 0;
+        var y = 0;
+        switch (weapon) {
+            case Weapon.Hammer: {
+                x = 0.11;
+                break;
+            }
+            case Weapon.Enforcer: {
+                x = 0.4;
+                break;
+            }
+            case Weapon.Bio: {
+                x = 0.17;
+                break;
+            }
+            case Weapon.Asmd: { break; }
+            case Weapon.Link: { break; }
+            case Weapon.Minigun: { break; }
+            case Weapon.Flak: {
+                x = 0.17;
+                break;
+            }
+            case Weapon.Rocket: {
+                x = 0.11;
+                break;
+            }
+            case Weapon.Sniper: {
+                x = 0.012;
+                break;
+            }
+            case Weapon.Redeemer: { break; }
+        }
+
+        return new NormalizedVector(x, y);
+    }
 
     constructor(object: GameObject) {
         super('PlayerDraw', object);
@@ -55,6 +102,21 @@ abstract class PlayerDrawComponent extends Component {
         this.ShoulderSocketOnHand = new NormalizedVector(0.1, 0.19);
         this.ShoulderSocketOnBody = new NormalizedVector(0.5, 0.25);
         this.LegsSocketOnBody = new NormalizedVector(0.5, 0.867);
+
+        // TODO: add cache pick logic for other fractions
+        switch ((<Player>(this.Object)).Fraction) {
+            case Fraction.Guard: {
+                this.BodySprite = ResourceCache.Image['guard-body'];
+                this.HandsSprite = ResourceCache.Image['guard-hands'];
+                this.LegsSprite = ResourceCache.Image['guard-legs'];
+                this.HeadSprite = ((<Player>(this.Object)).Character === Character.Lauren) ? ResourceCache.Image['guard-lauren'] : ResourceCache.Image['guard-blackjack'];
+                break;
+            }
+        }
+    }
+
+    public Draw() {
+
     }
 }
 
