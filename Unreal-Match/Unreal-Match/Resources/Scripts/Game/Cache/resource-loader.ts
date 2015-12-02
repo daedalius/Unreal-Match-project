@@ -1,9 +1,6 @@
 ﻿import ResourceCache = require('resource-cache');
-import PreloaderScreen = require('../Other/preloader-screen');
+import PreloaderScreen = require('../HUD/preloader-screen');
 import ResourceType = require('resource-type');
-import starter = require('../Starter');
-
-
 
 class ResourceLoader {
     static LoadHQBundle = function () {

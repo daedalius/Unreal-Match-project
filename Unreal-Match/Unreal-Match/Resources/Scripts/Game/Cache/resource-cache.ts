@@ -4,7 +4,7 @@ import IGameResource = require('game-resource-interface');
 import AudioResource = require('audio-resource');
 import ImageResource = require('image-resource');
 import ResourceType = require('resource-type');
-import PreloaderScreen = require('../Other/preloader-screen');
+import PreloaderScreen = require('../HUD/preloader-screen');
 
 class ResourceCache {
     private static IsStarted = false;

@@ -145,14 +145,20 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Vector.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\VideoMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Weapon.Enum.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Other\preloader-screen.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Algorithms.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\Camera.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\CameraBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\FreeCameraBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\ObjectWatchBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\PointWatchBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\preloader-screen.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\image-resource.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\audio-resource.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\game-resource-interface.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Starter.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\UnrealMatch.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />
   </ItemGroup>
