@@ -30,7 +30,10 @@ var json = {
         passMap: []
     },
     gameMode: GameMode.Deathmatch,
-    videoMode: VideoMode.HQ
+    configuation: {
+        videoMode: VideoMode.HQ,
+        origin: new Size(800, 450)
+    }
 };
 
 // Loader function
@@ -40,9 +43,16 @@ var json = {
 var game: GameClient = (function () {
 
     // base settings
-    GameConfiguration.VideoMode = json.videoMode;
-    GameConfiguration.Origin = new Size(800, 450);
+    GameConfiguration.VideoMode = json.configuation.videoMode;
+    GameConfiguration.Origin = json.configuation.origin;
 
+    // implementation of GameClient
+    var player = new Player(1, new Point(100, 100), json.player.team, json.player.character);
+    var world = new World(json.world.level, json.world.size, json.world.passMap);
+    var objects = new Array<GameObject>();
+    objects.push(player);
+
+    // TODO: move first cache call to GameClient/Deathmatch constructor
     // cache
     (GameConfiguration.VideoMode === VideoMode.HQ) ? ResourceLoader.LoadHQBundle : ResourceLoader.LoadLQBundle;
     $('#game-cache-element').one('resources-loaded', function () {
@@ -51,12 +61,6 @@ var game: GameClient = (function () {
 
         // TODO: report about completion, start network phase
     });
-
-    // implementation of GameClient
-    var player = new Player(1, new Point(100, 100), json.player.team, json.player.character);
-    var world = new World(json.world.level, json.world.size, json.world.passMap);
-    var objects = new Array<GameObject>();
-    objects.push(player);
 
     if (json.gameMode === GameMode.Deathmatch) {
         return new Deathmatch(player, objects, world);
