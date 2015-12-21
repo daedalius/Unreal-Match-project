@@ -41,6 +41,11 @@ class Point {
         this.X += vector.X;
         this.Y += vector.Y;
     }
+
+    /** Returns bool value of point equality */
+    public Equals(otherPoint: Point) {
+        return this === otherPoint || (this.X === otherPoint.X && this.Y === otherPoint.Y);
+    }
 }
 
 export = Point;

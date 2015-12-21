@@ -11,7 +11,7 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
-    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -132,10 +132,16 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerAmmunition.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerTransition.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDraw.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\ComponentContainer.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\Deathmatch.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\GameClient.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\World.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Objects\GameObject.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Objects\Player.Object.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Character.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Fraction.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\GameMode.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Level.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Team.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\NormalizedVector.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Point.Primitive.ts" />
@@ -146,11 +152,13 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\VideoMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Weapon.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Algorithms.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\Camera.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\CameraBahaviour.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\FreeCameraBahaviour.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\ObjectWatchBahaviour.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\HUD\Camera\PointWatchBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\GameConfiguration.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\GameLoader.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\Camera.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\CameraBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\FreeCameraBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\ObjectWatchBahaviour.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\PointWatchBahaviour.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\HUD\preloader-screen.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\image-resource.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\audio-resource.ts" />
@@ -158,7 +166,7 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\UnrealMatch.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\Render.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />
   </ItemGroup>
