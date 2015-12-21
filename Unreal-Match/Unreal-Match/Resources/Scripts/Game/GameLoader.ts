@@ -23,6 +23,7 @@ var json = {
     player: {
         character: Character.Lauren,
         team: Team.Red,
+        position: new Point(500, 500)
     },
     world: {
         level: Level.RisingSun,
@@ -38,8 +39,7 @@ var json = {
 
 // Loader function
 // 1: constructs base settings
-// 2: constructs cache
-// 3: returns implementation of GameClient (which parent for Deathmatch)
+// 2: returns implementation of GameClient (which parent for Deathmatch, contains )
 var game: GameClient = (function () {
 
     // base settings
@@ -47,25 +47,25 @@ var game: GameClient = (function () {
     GameConfiguration.Origin = json.configuation.origin;
 
     // implementation of GameClient
-    var player = new Player(1, new Point(100, 100), json.player.team, json.player.character);
+    var player = new Player(1, json.player.position, json.player.team, json.player.character);
     var world = new World(json.world.level, json.world.size, json.world.passMap);
     var objects = new Array<GameObject>();
     objects.push(player);
 
-    // TODO: move first cache call to GameClient/Deathmatch constructor
-    // cache
-    (GameConfiguration.VideoMode === VideoMode.HQ) ? ResourceLoader.LoadHQBundle : ResourceLoader.LoadLQBundle;
+    if (json.gameMode === GameMode.Deathmatch) {
+        game = new Deathmatch(player, objects, world);
+    }
+
+    // When cache is done...
     $('#game-cache-element').one('resources-loaded', function () {
         // Camera setup
-        Camera.WatchUserInput(new Point(500, 500));
+        Camera.WatchUserInput(player.Position);
 
         // TODO: report about completion, start network phase
     });
 
-    if (json.gameMode === GameMode.Deathmatch) {
-        return new Deathmatch(player, objects, world);
-    }
+    return game;
 })()
 
-declare var exports: any;
+//declare var exports: any;
 export = game;

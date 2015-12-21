@@ -1,14 +1,32 @@
 ﻿import ResourceCache = require('resource-cache');
-import PreloaderScreen = require('../HUD/preloader-screen');
 import ResourceType = require('resource-type');
+import Level = require('../Enums/Level.Enum');
+import GameConfiguration = require('GameConfiguration');
+import VideoMode = require('../Enums/VideoMode.Enum');
 
 class ResourceLoader {
-    static LoadHQBundle = function () {
-        ResourceCache.Add(ResourceType.AudioResource, 'menu-theme', '/Resources/Sounds/Game/Levels/Rising-Sun', 2000);
+    /** Caches all characters, weapons, items for selected VideoMode */
+    public static LoadBaseBundle = function () {
+        if (GameConfiguration.VideoMode === VideoMode.HQ) {
+            ResourceLoader.LoadHQBaseBundle();
+        }
+        else {
+            ResourceLoader.LoadLQBaseBundle();
+        }
+    }
 
-        ResourceCache.Add(ResourceType.ImageResource, 'map', '/Resources/Images/Game/Levels/Rising-Sun.jpg', 2500);
-        ResourceCache.Add(ResourceType.ImageResource, 'map-pass', '/Resources/Images/Game/Levels/Rising-Sun-Passableness-Map.png', 14);
+    /** Caches all media for required game level */
+    public static LoadLevelBundle = function (level: Level) {
+        if (GameConfiguration.VideoMode === VideoMode.HQ) {
+            ResourceLoader.LoadHQLevelBundle(level);
+        }
+        else {
+            ResourceLoader.LoadLQLevelBundle(level);
+        }
+    }
 
+    /** Caches all characters, weapons, items in HQ */
+    private static LoadHQBaseBundle = function () {
         ResourceCache.Add(ResourceType.ImageResource, 'weapons', '/Resources/Images/Game/Weapons/hq.png', 39);
 
         ResourceCache.Add(ResourceType.ImageResource, 'guard-body', '/Resources/Images/Game/Fractions/Guard/hq/guard-body.png', 17);
@@ -18,12 +36,8 @@ class ResourceLoader {
         ResourceCache.Add(ResourceType.ImageResource, 'guard-blackjack', '/Resources/Images/Game/Fractions/Guard/hq/guard-head-blackjack.png', 2);
     }
 
-    static LoadLQBundle = function () {
-        ResourceCache.Add(ResourceType.AudioResource, 'menu-theme', '/Resources/Sounds/Game/Levels/Rising-Sun', 2000);
-        // TODO: convert map
-        ResourceCache.Add(ResourceType.ImageResource, 'map', '/Resources/Images/Game/Levels/Rising-Sun.jpg', 2500);
-        ResourceCache.Add(ResourceType.ImageResource, 'map-pass', '/Resources/Images/Game/Levels/Rising-Sun-Passableness-Map.png', 14);
-
+    /** Caches all characters, weapons, items in LQ */
+    private static LoadLQBaseBundle = function () {
         ResourceCache.Add(ResourceType.ImageResource, 'weapons', '/Resources/Images/Game/Weapons/lq.png', 4);
 
         ResourceCache.Add(ResourceType.ImageResource, 'guard-body', '/Resources/Images/Game/Fractions/Guard/lq/guard-body.png', 2);
@@ -31,6 +45,28 @@ class ResourceLoader {
         ResourceCache.Add(ResourceType.ImageResource, 'guard-legs', '/Resources/Images/Game/Fractions/Guard/lq/guard-legs.png', 16);
         ResourceCache.Add(ResourceType.ImageResource, 'guard-lauren', '/Resources/Images/Game/Fractions/Guard/lq/guard-head-lauren.png', 1);
         ResourceCache.Add(ResourceType.ImageResource, 'guard-blackjack', '/Resources/Images/Game/Fractions/Guard/lq/guard-head-blackjack.png', 1);
+    }
+
+    /** Caches all requested level media in HQ */
+    private static LoadHQLevelBundle = function (level: Level) {
+        switch (level) {
+            case Level.RisingSun: {
+                ResourceCache.Add(ResourceType.AudioResource, 'menu-theme', '/Resources/Sounds/Game/Levels/Rising-Sun', 2000);
+                ResourceCache.Add(ResourceType.ImageResource, 'map', '/Resources/Images/Game/Levels/Rising-Sun/HQ.jpg', 5150);
+                break;
+            }
+        }
+    }
+
+    /** Caches all requested level media in LQ */
+    private static LoadLQLevelBundle = function (level: Level) {
+        switch (level) {
+            case Level.RisingSun: {
+                ResourceCache.Add(ResourceType.AudioResource, 'menu-theme', '/Resources/Sounds/Game/Levels/Rising-Sun', 2000);
+                ResourceCache.Add(ResourceType.ImageResource, 'map', '/Resources/Images/Game/Levels/Rising-Sun/LQ.jpg', 2650);
+                break;
+            }
+        }
     }
 }
 
