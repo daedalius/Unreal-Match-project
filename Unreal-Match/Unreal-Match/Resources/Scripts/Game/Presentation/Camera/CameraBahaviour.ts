@@ -15,11 +15,11 @@ abstract class CameraBahaviour {
         var camera: Point = this.GetPoint();
 
         // find x part
-        var startX: number = Algorithms.Clamp(camera.X, GameConfiguration.Origin.Width / 2, game.World.Size.Width - GameConfiguration.Origin.Width / 2);
+        var startX: number = Algorithms.Clamp(camera.X, game.Configuration.Origin.Width / 2, game.World.Size.Width - game.Configuration.Origin.Width / 2);
         // find y part
-        var startY: number = Algorithms.Clamp(camera.Y, GameConfiguration.Origin.Height / 2, game.World.Size.Height - GameConfiguration.Origin.Height / 2);
+        var startY: number = Algorithms.Clamp(camera.Y, game.Configuration.Origin.Height / 2, game.World.Size.Height - game.Configuration.Origin.Height / 2);
 
-        return new Rectangle(new Point(startX, startY), new Point(startX + GameConfiguration.Origin.Width, startY + GameConfiguration.Origin.Height));
+        return new Rectangle(new Point(startX, startY), new Point(startX + game.Configuration.Origin.Width, startY + game.Configuration.Origin.Height));
     }
 
     /** Returns current camera point */

@@ -9,6 +9,7 @@ import Team = require('Enums/Team.Enum');
 import Character = require('Enums/Character.Enum');
 import Level = require('Enums/Level.Enum');
 
+import Vector = require('Entities/Primitives/Vector.Primitive');
 import Point = require('Entities/Primitives/Point.Primitive');
 import Size = require('Entities/Primitives/Size.Primitive');
 import Rectangle = require('Entities/Primitives/Rectangle.Primitive');
@@ -31,9 +32,10 @@ var json = {
         passMap: []
     },
     gameMode: GameMode.Deathmatch,
-    configuation: {
+    configuration: {
         videoMode: VideoMode.HQ,
-        origin: new Size(800, 450)
+        origin: new Size(800, 450),
+        gravity: new Vector(0, 9.8)
     }
 };
 
@@ -43,25 +45,32 @@ var json = {
 var game: GameClient = (function () {
 
     // base settings
-    GameConfiguration.VideoMode = json.configuation.videoMode;
-    GameConfiguration.Origin = json.configuation.origin;
+    var configuration: GameConfiguration = new GameConfiguration();
+    configuration.VideoMode = json.configuration.videoMode;
+    configuration.Gravity = json.configuration.gravity;
+    configuration.Origin = json.configuration.origin;
 
     // implementation of GameClient
     var player = new Player(1, json.player.position, json.player.team, json.player.character);
     var world = new World(json.world.level, json.world.size, json.world.passMap);
+    var camera = new Camera();
     var objects = new Array<GameObject>();
     objects.push(player);
 
     if (json.gameMode === GameMode.Deathmatch) {
-        game = new Deathmatch(player, objects, world);
+        game = new Deathmatch(player, objects, world, camera, configuration);
     }
 
     // When cache is done...
     $('#game-cache-element').one('resources-loaded', function () {
         // Camera setup
-        Camera.WatchUserInput(player.Position);
+        game.Camera.WatchUserInput(player.Position);
 
-        // TODO: report about completion, start network phase
+        // TODO: start network phase
+
+        // TODO: start background drawing
+
+        // TODO: initialize and hide HUD
     });
 
     return game;

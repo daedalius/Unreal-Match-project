@@ -1,4 +1,6 @@
-﻿import Point = require('../../Entities/Primitives/Point.Primitive');
+﻿import game = require('../../GameLoader');
+
+import Point = require('../../Entities/Primitives/Point.Primitive');
 import Camera = require('../Camera/Camera');
 
 class BackgroundRender {
@@ -8,7 +10,7 @@ class BackgroundRender {
 
     private static PreviousCameraPosition: Point;
     private static DrawBackground() {
-        var currentCameraPosition: Point = Camera.GetCameraPosition();
+        var currentCameraPosition: Point = game.Camera.GetCameraPosition();
 
         // Prevent background redraw if cameras position doesn't changed
         if (BackgroundRender.PreviousCameraPosition !== undefined) {

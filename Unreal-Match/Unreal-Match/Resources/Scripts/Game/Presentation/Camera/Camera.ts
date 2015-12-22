@@ -10,20 +10,20 @@ import PointWatchBahaviour = require('PointWatchBahaviour');
 
 /** Present camera behaviour. Required map rectangle in UnrealMatch static class */
 class Camera {
-    private static Behaviour: CameraBahaviour;
+    private Behaviour: CameraBahaviour;
 
     /** Get camera position according selected algorithm (WatchUserInput by default) */
-    public static GetCameraPosition(): Point {
+    public GetCameraPosition(): Point {
         return this.Behaviour.GetPoint();
     }
 
     /** Returns correct area to drow as rectangle in OCS */
-    public static GetRectangle(): Rectangle {
-        return Camera.Behaviour.GetRectangle();
+    public GetRectangle(): Rectangle {
+        return this.Behaviour.GetRectangle();
     }
 
     /** Watch for someone GameObject position, then switch to player */
-    public static WatchObject(object: GameObject) {
+    public WatchObject(object: GameObject) {
         if (this.Behaviour !== undefined) {
             this.Behaviour.Dispose();
         }
@@ -31,7 +31,7 @@ class Camera {
     }
 
     /** Watch for one point */
-    public static WatchPoint(point: Point) {
+    public WatchPoint(point: Point) {
         if (this.Behaviour !== undefined) {
             this.Behaviour.Dispose();
         }
@@ -39,7 +39,7 @@ class Camera {
     }
 
     /** Watch for keyboard arrows, mouse input or swipe */
-    public static WatchUserInput(point: Point) {
+    public WatchUserInput(point: Point) {
         if (this.Behaviour !== undefined) {
             this.Behaviour.Dispose();
         }

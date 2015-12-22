@@ -1,11 +1,14 @@
 ﻿import VideoMode = require('Enums/VideoMode.Enum');
 import Size = require('Entities/Primitives/Size.Primitive');
+import Vector = require('Entities/Primitives/Vector.Primitive');
 
 class GameConfiguration {
     /** Base game resolution */
-    public static Origin: Size = new Size(800, 450);
+    public Origin: Size;
     /** Selected video mode: HQ or LQ */
-    public static VideoMode: VideoMode;
+    public VideoMode: VideoMode;
+    /** Gravity vector */
+    public Gravity: Vector;
 }
 
 export = GameConfiguration;

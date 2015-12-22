@@ -1,4 +1,5 @@
-﻿import ResourceCache = require('resource-cache');
+﻿import game = require('../GameLoader');
+import ResourceCache = require('resource-cache');
 import ResourceType = require('resource-type');
 import Level = require('../Enums/Level.Enum');
 import GameConfiguration = require('GameConfiguration');
@@ -7,7 +8,7 @@ import VideoMode = require('../Enums/VideoMode.Enum');
 class ResourceLoader {
     /** Caches all characters, weapons, items for selected VideoMode */
     public static LoadBaseBundle = function () {
-        if (GameConfiguration.VideoMode === VideoMode.HQ) {
+        if (game.Configuration.VideoMode === VideoMode.HQ) {
             ResourceLoader.LoadHQBaseBundle();
         }
         else {
@@ -17,7 +18,7 @@ class ResourceLoader {
 
     /** Caches all media for required game level */
     public static LoadLevelBundle = function (level: Level) {
-        if (GameConfiguration.VideoMode === VideoMode.HQ) {
+        if (game.Configuration.VideoMode === VideoMode.HQ) {
             ResourceLoader.LoadHQLevelBundle(level);
         }
         else {
