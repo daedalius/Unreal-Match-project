@@ -1,5 +1,5 @@
 ﻿import game = require('../../GameLoader');
-import GameConfiguration = require('../../GameConfiguration');
+import GameConfiguration = require('../../Entities/Game/GameConfiguration');
 
 import GameObject = require('../../Entities/Objects/GameObject');
 

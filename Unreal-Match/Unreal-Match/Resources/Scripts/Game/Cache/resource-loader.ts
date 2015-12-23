@@ -2,7 +2,7 @@
 import ResourceCache = require('resource-cache');
 import ResourceType = require('resource-type');
 import Level = require('../Enums/Level.Enum');
-import GameConfiguration = require('GameConfiguration');
+import GameConfiguration = require('Entities/Game/GameConfiguration');
 import VideoMode = require('../Enums/VideoMode.Enum');
 
 class ResourceLoader {

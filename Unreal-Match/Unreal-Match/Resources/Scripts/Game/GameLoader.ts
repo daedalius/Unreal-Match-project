@@ -3,6 +3,7 @@ import Player = require('Entities/Objects/Player.Object');
 import Camera = require('Presentation/Camera/Camera');
 import World = require('Entities/Game/World');
 
+import ResizeMode = require('Enums/ResizeMode.Enum');
 import VideoMode = require('Enums/VideoMode.Enum');
 import GameMode = require('Enums/GameMode.Enum');
 import Team = require('Enums/Team.Enum');
@@ -14,9 +15,11 @@ import Point = require('Entities/Primitives/Point.Primitive');
 import Size = require('Entities/Primitives/Size.Primitive');
 import Rectangle = require('Entities/Primitives/Rectangle.Primitive');
 
-import GameConfiguration = require('GameConfiguration');
+import GameConfiguration = require('Entities/Game/GameConfiguration');
 import GameClient = require('Entities/Game/GameClient');
 import Deathmatch = require('Entities/Game/Deathmatch');
+
+import BackgroundRender = require('Presentation/Rendering/BackgroundRender');
 
 import ResourceLoader = require('Cache/resource-loader');
 
@@ -34,8 +37,9 @@ var json = {
     gameMode: GameMode.Deathmatch,
     configuration: {
         videoMode: VideoMode.HQ,
+        resizeMode: ResizeMode.Fit,
         origin: new Size(800, 450),
-        gravity: new Vector(0, 9.8)
+        gravity: new Vector(0, -9.8)
     }
 };
 
@@ -47,6 +51,7 @@ var game: GameClient = (function () {
     // base settings
     var configuration: GameConfiguration = new GameConfiguration();
     configuration.VideoMode = json.configuration.videoMode;
+    configuration.ResizeMode = json.configuration.resizeMode;
     configuration.Gravity = json.configuration.gravity;
     configuration.Origin = json.configuration.origin;
 
@@ -66,9 +71,17 @@ var game: GameClient = (function () {
         // Camera setup
         game.Camera.WatchUserInput(player.Position);
 
-        // TODO: start network phase
+        // TODO: connect user input logic
+
+        // Resize canvaces with content
+        BackgroundRender.Resize();
+        $(window).on('resize', function () {
+            BackgroundRender.Resize();
+        });
 
         // TODO: start background drawing
+        
+        // TODO: start network phase
 
         // TODO: initialize and hide HUD
     });

@@ -34,7 +34,9 @@
     <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-head-blackjack.png" />
     <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-head-lauren.png" />
     <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-legs.png" />
-    <Content Include="Resources\Images\Game\Levels\Rising-Sun-Path-Map.png" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun\HQ.jpg" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun\LQ.jpg" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun\Path-Map.png" />
     <Content Include="Resources\Images\Game\Weapons\hq.png" />
     <Content Include="Resources\Images\Game\Weapons\lq.png" />
     <Content Include="Resources\Images\Interface\Backgrounds\menu-background.png" />
@@ -48,7 +50,6 @@
     <Content Include="Resources\Images\Interface\Elements\gamepad-buttons.png" />
     <Content Include="Resources\Images\Interface\Elements\reaper.png" />
     <Content Include="Resources\Images\Interface\Elements\logo-full-white.png" />
-    <Content Include="Resources\Images\Game\Levels\Rising-Sun.jpg" />
     <Content Include="Resources\Scripts\Global\gamepad-connect.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input-callbacks.js" />
     <Content Include="Resources\Scripts\Global\gamepad-input.js" />
@@ -142,6 +143,7 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Fraction.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\GameMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Level.Enum.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\ResizeMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Team.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\NormalizedVector.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Point.Primitive.ts" />
@@ -152,7 +154,7 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\VideoMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Weapon.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Algorithms.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\GameConfiguration.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\GameConfiguration.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\GameLoader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\Camera.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Camera\CameraBahaviour.ts" />
@@ -166,6 +168,7 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\BackgroundRender.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\Render.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />

@@ -1,5 +1,5 @@
 ﻿import ResourceLoader = require('../Cache/resource-loader');
-import GameConfiguration = require('../GameConfiguration');
+import GameConfiguration = require('../Entities/Game/GameConfiguration');
 import ComponentContainer = require('../Components/ComponentContainer');
 
 import GameObject = require('../Objects/GameObject');
