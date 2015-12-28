@@ -1,4 +1,4 @@
-﻿import Component = require('../Components/Component');
+﻿import Component = require('Resources/Scripts/Game/Entities/Components/Component');
 
 /** Presents component containing and implements base methods to manipulate them */
 abstract class ComponentContainer {

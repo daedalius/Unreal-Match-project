@@ -1,12 +1,12 @@
-﻿import ResourceLoader = require('../Cache/resource-loader');
-import GameConfiguration = require('../Entities/Game/GameConfiguration');
-import ComponentContainer = require('../Components/ComponentContainer');
+﻿import ResourceLoader = require('Resources/Scripts/Game/Cache/resource-loader');
+import GameConfiguration = require('Resources/Scripts/Game/Entities/Game/GameConfiguration');
+import ComponentContainer = require('Resources/Scripts/Game/Entities/Components/ComponentContainer');
 
-import GameObject = require('../Objects/GameObject');
-import Player = require('../Objects/Player.Object');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
+import Player = require('Resources/Scripts/Game/Entities/Objects/Player.Object');
 
-import World = require('World');
-import Camera = require('../../Presentation/Camera/Camera');
+import World = require('Resources/Scripts/Game/Entities/Game/World');
+import Camera = require('Resources/Scripts/Game/Presentation/Camera/Camera');
 
 abstract class GameClient extends ComponentContainer {
     /** Current player */

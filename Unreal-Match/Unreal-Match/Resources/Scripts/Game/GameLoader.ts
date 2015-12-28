@@ -1,27 +1,28 @@
-﻿import GameObject = require('Entities/Objects/GameObject');
-import Player = require('Entities/Objects/Player.Object');
-import Camera = require('Presentation/Camera/Camera');
-import World = require('Entities/Game/World');
+﻿import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
+import Player = require('Resources/Scripts/Game/Entities/Objects/Player.Object');
 
-import ResizeMode = require('Enums/ResizeMode.Enum');
-import VideoMode = require('Enums/VideoMode.Enum');
-import GameMode = require('Enums/GameMode.Enum');
-import Team = require('Enums/Team.Enum');
-import Character = require('Enums/Character.Enum');
-import Level = require('Enums/Level.Enum');
+import Camera = require('Resources/Scripts/Game/Presentation/Camera/Camera');
+import World = require('Resources/Scripts/Game/Entities/Game/World');
 
-import Vector = require('Entities/Primitives/Vector.Primitive');
-import Point = require('Entities/Primitives/Point.Primitive');
-import Size = require('Entities/Primitives/Size.Primitive');
-import Rectangle = require('Entities/Primitives/Rectangle.Primitive');
+import ResizeMode = require('Resources/Scripts/Game/Enums/ResizeMode.Enum');
+import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
+import GameMode = require('Resources/Scripts/Game/Enums/GameMode.Enum');
+import Team = require('Resources/Scripts/Game/Enums/Team.Enum');
+import Character = require('Resources/Scripts/Game/Enums/Character.Enum');
+import Level = require('Resources/Scripts/Game/Enums/Level.Enum');
 
-import GameConfiguration = require('Entities/Game/GameConfiguration');
-import GameClient = require('Entities/Game/GameClient');
-import Deathmatch = require('Entities/Game/Deathmatch');
+import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
+import Rectangle = require('Resources/Scripts/Game/Entities/Primitives/Rectangle.Primitive');
 
-import BackgroundRender = require('Presentation/Rendering/BackgroundRender');
+import GameConfiguration = require('Resources/Scripts/Game/Entities/Game/GameConfiguration');
+import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
+import Deathmatch = require('Resources/Scripts/Game/Entities/Game/Deathmatch');
 
-import ResourceLoader = require('Cache/resource-loader');
+import BackgroundRender = require('Resources/Scripts/Game/Presentation/Rendering/BackgroundRender');
+
+import ResourceLoader = require('Resources/Scripts/Game/Cache/resource-loader');
 
 var json = {
     player: {

@@ -1,5 +1,5 @@
-﻿import Level = require('../../Enums/Level.Enum')
-import Size = require('../Primitives/Size.Primitive');
+﻿import Level = require('Resources/Scripts/Game/Enums/Level.Enum')
+import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
 
 class World {
     /** Game level */

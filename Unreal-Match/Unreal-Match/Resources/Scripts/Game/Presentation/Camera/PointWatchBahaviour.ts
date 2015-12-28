@@ -1,5 +1,5 @@
-﻿import CameraBahaviour = require('CameraBahaviour');
-import Point = require('../../Entities/Primitives/Point.Primitive');
+﻿import CameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/CameraBahaviour');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 
 /** Simple point view camera */
 class PointWatchBahaviour extends CameraBahaviour {

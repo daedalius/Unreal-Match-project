@@ -1,16 +1,16 @@
-﻿import ResourceCache = require('Cache/resource-cache');
+﻿import ResourceCache = require('Resources/Scripts/Game/Cache/resource-cache');
 
-import Component = require('Component');
-import PlayerAmmunition = require('PlayerAmmunition.Component');
+import Component = require('Resources/Scripts/Game/Entities/Components/Component');
+import PlayerAmmunition = require('Resources/Scripts/Game/Entities/Components/PlayerAmmunition.Component');
 
-import Player = require('../Objects/Player.Object');
-import GameObject = require('../Objects/GameObject');
-import Fraction = require('../../Enums/Fraction.Enum');
-import Character = require('../../Enums/Character.Enum');
-import Weapon = require('../../Enums/Weapon.Enum');
+import Player = require('Resources/Scripts/Game/Entities/Objects/Player.Object');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
+import Fraction = require('Resources/Scripts/Game/Enums/Fraction.Enum');
+import Character = require('Resources/Scripts/Game/Enums/Character.Enum');
+import Weapon = require('Resources/Scripts/Game/Enums/Weapon.Enum');
 
-import Size = require('../Primitives/Size.Primitive');
-import NormalizedVector = require('../Primitives/NormalizedVector.Primitive');
+import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
+import NormalizedVector = require('Resources/Scripts/Game/Entities/Primitives/NormalizedVector.Primitive');
 
 abstract class PlayerDrawComponent extends Component {
     /** Players fraction */

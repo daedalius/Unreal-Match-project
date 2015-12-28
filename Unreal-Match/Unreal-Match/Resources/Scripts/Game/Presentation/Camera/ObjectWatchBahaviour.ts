@@ -1,7 +1,7 @@
-﻿import CameraBahaviour = require('CameraBahaviour');
-import GameObject = require('../../Entities/Objects/GameObject');
-import game = require('GameLoader');
-import Point = require('../../Entities/Primitives/Point.Primitive');
+﻿import CameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/CameraBahaviour');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
+import game = require('Resources/Scripts/Game/GameLoader');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 
 /** This camera watching for selected object or current player (if object gone) */
 class ObjectWatchBahaviour extends CameraBahaviour {

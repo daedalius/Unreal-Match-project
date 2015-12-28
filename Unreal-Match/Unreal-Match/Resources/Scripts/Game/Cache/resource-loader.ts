@@ -1,9 +1,9 @@
-﻿import game = require('../GameLoader');
-import ResourceCache = require('resource-cache');
-import ResourceType = require('resource-type');
-import Level = require('../Enums/Level.Enum');
-import GameConfiguration = require('Entities/Game/GameConfiguration');
-import VideoMode = require('../Enums/VideoMode.Enum');
+﻿import game = require('Resources/Scripts/Game/GameLoader');
+import ResourceCache = require('Resources/Scripts/Game/Cache/resource-cache');
+import ResourceType = require('Resources/Scripts/Game/Cache/resource-type');
+import Level = require('Resources/Scripts/Game/Enums/Level.Enum');
+import GameConfiguration = require('Resources/Scripts/Game/Entities/Game/GameConfiguration');
+import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
 
 class ResourceLoader {
     /** Caches all characters, weapons, items for selected VideoMode */

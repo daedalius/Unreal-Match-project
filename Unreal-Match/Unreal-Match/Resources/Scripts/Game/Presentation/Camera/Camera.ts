@@ -1,12 +1,12 @@
-﻿import Point = require('../../Entities/Primitives/Point.Primitive');
-import Vector = require('../../Entities/Primitives/Vector.Primitive');
-import Rectangle = require('../../Entities/Primitives/Rectangle.Primitive');
-import GameObject = require('../../Entities/Objects/GameObject');
+﻿import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
+import Rectangle = require('Resources/Scripts/Game/Entities/Primitives/Rectangle.Primitive');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
 
-import CameraBahaviour = require('CameraBahaviour');
-import FreeCameraBahaviour = require('FreeCameraBahaviour');
-import ObjectWatchBahaviour = require('ObjectWatchBahaviour');
-import PointWatchBahaviour = require('PointWatchBahaviour');
+import CameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/CameraBahaviour');
+import FreeCameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/FreeCameraBahaviour');
+import ObjectWatchBahaviour = require('Resources/Scripts/Game/Presentation/Camera/ObjectWatchBahaviour');
+import PointWatchBahaviour = require('Resources/Scripts/Game/Presentation/Camera/PointWatchBahaviour');
 
 /** Present camera behaviour. Required map rectangle in UnrealMatch static class */
 class Camera {

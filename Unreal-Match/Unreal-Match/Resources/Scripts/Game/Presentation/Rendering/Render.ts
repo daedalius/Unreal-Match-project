@@ -1,7 +1,7 @@
-﻿import game = require('../../GameLoader');
+﻿import game = require('Resources/Scripts/Game/GameLoader');
 
-import Point = require('../../Entities/Primitives/Point.Primitive');
-import Camera = require('../Camera/Camera');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import Camera = require('Resources/Scripts/Game/Presentation/Camera/Camera');
 
 class BackgroundRender {
     public static Run() {

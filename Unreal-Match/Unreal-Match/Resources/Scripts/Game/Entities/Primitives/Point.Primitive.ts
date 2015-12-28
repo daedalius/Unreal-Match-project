@@ -1,4 +1,4 @@
-﻿import Vector = require('Vector.Primitive');
+﻿import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
 
 /** Present a point in two-dimentional space */
 class Point {

@@ -1,4 +1,4 @@
-﻿import NormalizedVector = require('NormalizedVector.Primitive');
+﻿import NormalizedVector = require('Resources/Scripts/Game/Entities/Primitives/NormalizedVector.Primitive');
 
 /** Present two-dimentional vector */
 class Vector {

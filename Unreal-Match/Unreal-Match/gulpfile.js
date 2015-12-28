@@ -9,7 +9,7 @@ var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('game-ts', function() {
-    var tsResult = gulp.src('Resources/Scripts/Game/**/*.ts')
+    var tsResult = gulp.src('./Resources/Scripts/Game/**/*.ts')
                        .pipe(sourcemaps.init()) // This means sourcemaps will be generated 
                        .pipe(ts({
                            sortOutput: true,
@@ -20,7 +20,7 @@ gulp.task('game-ts', function() {
     return tsResult.js
                 .pipe(concat('game.js')) 
                 .pipe(sourcemaps.write()) 
-                .pipe(gulp.dest('Resources/Scripts/Game'));
+                .pipe(gulp.dest('./'));
 });
 
 // copy vendors libs from bower to Resources/Scripts/Vendors
@@ -68,6 +68,8 @@ gulp.task('cite-copy', function() {
 	gulp.src('Resources/**/*', { "base" : "." }).pipe(gulp.dest(relativeOutputDirectoryPath));
 	// index.html
 	gulp.src('smashscreen.html').pipe(gulp.dest(relativeOutputDirectoryPath));
+	gulp.src('gameapp.js').pipe(gulp.dest(relativeOutputDirectoryPath));
+	gulp.src('game.js').pipe(gulp.dest(relativeOutputDirectoryPath));
 	gulp.src('index.html').pipe(gulp.dest(relativeOutputDirectoryPath));
 	gulp.src('web.Release.config').pipe(rename("web.config")).pipe(gulp.dest(relativeOutputDirectoryPath));	
 });

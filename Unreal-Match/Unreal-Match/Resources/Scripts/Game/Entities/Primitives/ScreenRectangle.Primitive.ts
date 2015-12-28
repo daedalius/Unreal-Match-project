@@ -1,4 +1,4 @@
-﻿import Point = require('Point.Primitive');
+﻿import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 
 /** Presents rectangle in Screen CS */
 class ScreenRectangle {

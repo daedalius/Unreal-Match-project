@@ -1,5 +1,5 @@
-﻿import Point = require('Point.Primitive');
-import ScreenRectangle = require('ScreenRectangle.Primitive');
+﻿import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import ScreenRectangle = require('Resources/Scripts/Game/Entities/Primitives/ScreenRectangle.Primitive');
 
 /** Presents rectangle in Cartesian CS */
 class Rectangle {

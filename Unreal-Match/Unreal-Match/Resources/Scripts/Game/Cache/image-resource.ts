@@ -1,7 +1,7 @@
 ﻿/// <reference path='../../vendors/jquery.d.ts' />
 
-import IGameResource = require('game-resource-interface');
-import ResourceCache = require('resource-cache');
+import IGameResource = require('Resources/Scripts/Game/Cache/game-resource-interface');
+import ResourceCache = require('Resources/Scripts/Game/Cache/resource-cache');
 
 /** Construct image in cache area and fire onload event on cache #game-cache-element node */
 class ImageResource implements IGameResource {

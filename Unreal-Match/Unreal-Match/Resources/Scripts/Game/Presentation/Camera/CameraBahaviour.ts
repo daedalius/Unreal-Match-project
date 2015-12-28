@@ -1,13 +1,13 @@
-﻿import game = require('../../GameLoader');
-import GameConfiguration = require('../../Entities/Game/GameConfiguration');
+﻿import game = require('Resources/Scripts/Game/GameLoader');
+import GameConfiguration = require('Resources/Scripts/Game/Entities/Game/GameConfiguration');
 
-import GameObject = require('../../Entities/Objects/GameObject');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
 
-import Algorithms = require('../../Algorithms');
+import Algorithms = require('Resources/Scripts/Game/Algorithms');
 
-import Point = require('../../Entities/Primitives/Point.Primitive');
-import Vector = require('../../Entities/Primitives/Vector.Primitive');
-import Rectangle = require('../../Entities/Primitives/Rectangle.Primitive');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
+import Rectangle = require('Resources/Scripts/Game/Entities/Primitives/Rectangle.Primitive');
 
 abstract class CameraBahaviour {
     /** Returns correct area to drow as rectangle in OCS */

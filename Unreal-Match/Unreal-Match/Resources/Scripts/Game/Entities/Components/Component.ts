@@ -1,4 +1,4 @@
-﻿import GameObject = require('../Objects/GameObject');
+﻿import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
 
 /** Base component class */
 abstract class Component {

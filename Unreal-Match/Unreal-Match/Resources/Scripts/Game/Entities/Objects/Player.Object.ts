@@ -1,15 +1,15 @@
-﻿import GameObject = require('GameObject');
+﻿import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
 
-import Character = require('../../Enums/Character.Enum');
-import Team = require('../../Enums/team.Enum');
-import Fraction = require('../../Enums/Fraction.Enum');
+import Character = require('Resources/Scripts/Game/Enums/Character.Enum');
+import Team = require('Resources/Scripts/Game/Enums/Team.Enum');
+import Fraction = require('Resources/Scripts/Game/Enums/Fraction.Enum');
 
-import PlayerTransitionComponent = require('../Components/PlayerTransition.Component');
-import PlayerDrawComponent = require('../Components/PlayerDraw.Component');
+import PlayerTransitionComponent = require('Resources/Scripts/Game/Entities/Components/PlayerTransition.Component');
+import PlayerDrawComponent = require('Resources/Scripts/Game/Entities/Components/PlayerDraw.Component');
 
-import Size = require('../Primitives/Size.Primitive');
-import Point = require('../Primitives/Point.Primitive');
-import NormalizedVector = require('../Primitives/NormalizedVector.Primitive');
+import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import NormalizedVector = require('Resources/Scripts/Game/Entities/Primitives/NormalizedVector.Primitive');
 
 /** Presents player entity */
 class Player extends GameObject {

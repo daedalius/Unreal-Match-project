@@ -1,10 +1,10 @@
 ﻿/// <reference path='../../vendors/jquery.d.ts' />
 
-import IGameResource = require('game-resource-interface');
-import AudioResource = require('audio-resource');
-import ImageResource = require('image-resource');
-import ResourceType = require('resource-type');
-import PreloaderScreen = require('../HUD/preloader-screen');
+import IGameResource = require('Resources/Scripts/Game/Cache/game-resource-interface');
+import AudioResource = require('Resources/Scripts/Game/Cache/audio-resource');
+import ImageResource = require('Resources/Scripts/Game/Cache/image-resource');
+import ResourceType = require('Resources/Scripts/Game/Cache/resource-type');
+import PreloaderScreen = require('Resources/Scripts/Game/HUD/preloader-screen');
 
 class ResourceCache {
     private static IsStarted = false;

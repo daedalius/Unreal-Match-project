@@ -1,10 +1,10 @@
-﻿import game = require('../../GameLoader');
-import Algorithms = require('../../Algorithms');
-import CameraBahaviour = require('CameraBahaviour');
-import GameObject = require('../../Entities/Objects/GameObject');
+﻿import game = require('Resources/Scripts/Game/GameLoader');
+import Algorithms = require('Resources/Scripts/Game/Algorithms');
+import CameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/CameraBahaviour');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
 
-import Point = require('../../Entities/Primitives/Point.Primitive');
-import Vector = require('../../Entities/Primitives/Vector.Primitive');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
+import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
 
 /** A free view camera for whole level watching. Required Dispose call afer use! */
 class FreeCameraBahaviour extends CameraBahaviour {

@@ -1,5 +1,5 @@
-﻿import ComponentContainer = require('../Components/ComponentContainer');
-import Point = require('../Primitives/Point.Primitive');
+﻿import ComponentContainer = require('Resources/Scripts/Game/Entities/Components/ComponentContainer');
+import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 
 abstract class GameObject extends ComponentContainer {
     /** Unical object identifier in game */

@@ -1,7 +1,7 @@
-﻿import ResizeMode = require('../../Enums/ResizeMode.Enum');
-import VideoMode = require('Enums/VideoMode.Enum');
-import Size = require('Entities/Primitives/Size.Primitive');
-import Vector = require('Entities/Primitives/Vector.Primitive');
+﻿import ResizeMode = require('Resources/Scripts/Game/Enums/ResizeMode.Enum');
+import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
+import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
+import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
 
 class GameConfiguration {
     /** Base game resolution */

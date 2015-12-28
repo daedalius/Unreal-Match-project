@@ -1,10 +1,9 @@
-﻿import Component = require('Component');
+﻿import Component = require('Resources/Scripts/Game/Entities/Components/Component');
 
-import Player = require('../Objects/Player.Object');
-import GameObject = require('../Objects/GameObject');
+import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
+import Player = require('Resources/Scripts/Game/Entities/Objects/Player.Object');
 
-
-import Weapon = require('../../Enums/Weapon.Enum');
+import Weapon = require('Resources/Scripts/Game/Enums/Weapon.Enum');
 
 class PlayerAmmunition extends Component {
     public Current: Weapon;

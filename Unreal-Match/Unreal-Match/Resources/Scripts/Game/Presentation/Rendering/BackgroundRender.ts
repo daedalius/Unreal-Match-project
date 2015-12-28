@@ -1,6 +1,6 @@
-﻿import VideoMode = require('../../Enums/VideoMode.Enum');
-import ResizeMode = require('../../Enums/ResizeMode.Enum');
-import game = require('../../GameLoader');
+﻿import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
+import ResizeMode = require('Resources/Scripts/Game/Enums/ResizeMode.Enum');
+import game = require('Resources/Scripts/Game/GameLoader');
 
 class BackgroundRender {
 
