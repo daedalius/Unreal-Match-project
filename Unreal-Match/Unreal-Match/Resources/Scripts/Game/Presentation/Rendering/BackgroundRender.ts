@@ -1,10 +1,11 @@
 ﻿import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
+import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
 import ResizeMode = require('Resources/Scripts/Game/Enums/ResizeMode.Enum');
-import game = require('Resources/Scripts/Game/GameLoader');
+import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 
 class BackgroundRender {
-
     public static Resize() {
+        var game = (<GameClient>window['game']);
         var $window = jQuery(window);
         var $content = jQuery('#content');
 
@@ -63,8 +64,13 @@ class BackgroundRender {
 
         }
 
-        game.Configuration.Relative.Width = newWidth;
-        game.Configuration.Relative.Height = newHeight;
+        if (!game.Configuration.Relative) {
+            game.Configuration.Relative = new Size(newWidth, newHeight)
+        }
+        else {
+            game.Configuration.Relative.Width = newWidth;
+            game.Configuration.Relative.Height = newHeight;
+        }
 
         // TODO: Recalculate all relative sizes according new width
 

@@ -1,4 +1,4 @@
-﻿import game = require('Resources/Scripts/Game/GameLoader');
+﻿import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 import Algorithms = require('Resources/Scripts/Game/Algorithms');
 import CameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/CameraBahaviour');
 import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
@@ -32,6 +32,7 @@ class FreeCameraBahaviour extends CameraBahaviour {
 
     /** Applies augmentation position to camera */
     private ApplyTransition() {
+        var game = (<GameClient>window['game']);
         // Check level outrange for X component...
         this.LastPositon.X = Algorithms.Clamp(this.LastPositon.X + this.Augmentation.X, 0, game.World.Size.Width);
         // ... and for Y component
@@ -44,13 +45,16 @@ class FreeCameraBahaviour extends CameraBahaviour {
 
     /** Map current mouse position in window to world coodinates in OCS. Each window corner mean acc world corner */
     private SubscribeOnMouseInput() {
+        var self: FreeCameraBahaviour = this;
+        var game = (<GameClient>window['game']);
+
         $(document).on('mousemove.camera', function (e: MouseEvent) {
             var $w = $(window);
             var xRate = e.clientX / $w.width();
             var yRate = ($w.height() - e.clientY) / $w.height();
 
-            this.NewPosition.X = game.World.Size.Width * xRate;
-            this.NewPosition.Y = game.World.Size.Height * yRate;
+            self.LastPositon.X = game.World.Size.Width * xRate;
+            self.LastPositon.Y = game.World.Size.Height * yRate;
         });
     }
 

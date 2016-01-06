@@ -47,7 +47,7 @@ var json = {
 // Loader function
 // 1: constructs base settings
 // 2: returns implementation of GameClient (which parent for Deathmatch, contains )
-var game: GameClient = (function () {
+(function () {
 
     // base settings
     var configuration: GameConfiguration = new GameConfiguration();
@@ -55,6 +55,7 @@ var game: GameClient = (function () {
     configuration.ResizeMode = json.configuration.resizeMode;
     configuration.Gravity = json.configuration.gravity;
     configuration.Origin = json.configuration.origin;
+    configuration.Relative = null;
 
     // implementation of GameClient
     var player = new Player(1, json.player.position, json.player.team, json.player.character);
@@ -64,13 +65,13 @@ var game: GameClient = (function () {
     objects.push(player);
 
     if (json.gameMode === GameMode.Deathmatch) {
-        game = new Deathmatch(player, objects, world, camera, configuration);
+        window['game'] = new Deathmatch(player, objects, world, camera, configuration);
     }
 
     // When cache is done...
     $('#game-cache-element').one('resources-loaded', function () {
         // Camera setup
-        game.Camera.WatchUserInput(player.Position);
+        window['game'].Camera.WatchUserInput(player.Position);
 
         // TODO: connect user input logic
 
@@ -86,9 +87,4 @@ var game: GameClient = (function () {
 
         // TODO: initialize and hide HUD
     });
-
-    return game;
 })()
-
-//declare var exports: any;
-export = game;

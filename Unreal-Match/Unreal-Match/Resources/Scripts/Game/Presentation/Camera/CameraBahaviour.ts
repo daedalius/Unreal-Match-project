@@ -1,4 +1,4 @@
-﻿import game = require('Resources/Scripts/Game/GameLoader');
+﻿import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 import GameConfiguration = require('Resources/Scripts/Game/Entities/Game/GameConfiguration');
 
 import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
@@ -13,7 +13,7 @@ abstract class CameraBahaviour {
     /** Returns correct area to drow as rectangle in OCS */
     public GetRectangle(): Rectangle {
         var camera: Point = this.GetPoint();
-
+        var game = (<GameClient>window['game']);
         // find x part
         var startX: number = Algorithms.Clamp(camera.X, game.Configuration.Origin.Width / 2, game.World.Size.Width - game.Configuration.Origin.Width / 2);
         // find y part

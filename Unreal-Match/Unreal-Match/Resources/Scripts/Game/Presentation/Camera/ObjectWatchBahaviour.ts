@@ -1,6 +1,6 @@
 ﻿import CameraBahaviour = require('Resources/Scripts/Game/Presentation/Camera/CameraBahaviour');
 import GameObject = require('Resources/Scripts/Game/Entities/Objects/GameObject');
-import game = require('Resources/Scripts/Game/GameLoader');
+import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 
 /** This camera watching for selected object or current player (if object gone) */
@@ -18,7 +18,7 @@ class ObjectWatchBahaviour extends CameraBahaviour {
             return this.Object.Position;
         }
         else {
-            this.Object = game.Player;
+            this.Object = (<GameClient>window['game']).Player;
             return this.GetPoint();
         }
     }
