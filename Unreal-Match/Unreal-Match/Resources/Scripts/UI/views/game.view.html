@@ -13,9 +13,11 @@
     </cache><!--
  --><div class="game-content"><!--
         Game canvaces
-      --><div id="content"><!--
-     --><canvas id="game-canvas-background" width="800" height="450"></canvas><!--
-     --><canvas id="game-canvas-objects" width="800" height="450"></canvas><!--
+     --><div id="content"><!--
+     --><canvas id="game-canvas-background" width="800" height="450" style="z-index: 10"></canvas><!--  background of level
+     --><canvas id="game-canvas-level" width="800" height="450" style="z-index: 20"></canvas><!--       level
+     --><canvas id="game-canvas-objects" width="800" height="450" style="z-index: 30"></canvas><!--     objects
+     --><canvas id="game-canvas-foreground" width="800" height="450" style="z-index: 50"></canvas><!--  foreground
      --></div><!--
  --></div>
 </div>

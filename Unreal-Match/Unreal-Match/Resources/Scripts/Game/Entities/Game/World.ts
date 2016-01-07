@@ -6,6 +6,8 @@ class World {
     public Level: Level;
     /** World size*/
     public Size: Size;
+    /** Size of foreground relatively level width */
+    public ForegroundRatio: number;
     /** Worlds passability map */
     public PassMap: Array<Array<boolean>>
 
