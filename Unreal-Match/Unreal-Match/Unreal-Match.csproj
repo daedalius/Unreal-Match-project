@@ -34,6 +34,7 @@
     <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-head-blackjack.png" />
     <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-head-lauren.png" />
     <Content Include="Resources\Images\Game\Fractions\Guard\lq\guard-legs.png" />
+    <Content Include="Resources\Images\Game\Levels\Rising-Sun\Foreground.png" />
     <Content Include="Resources\Images\Game\Levels\Rising-Sun\HQ.jpg" />
     <Content Include="Resources\Images\Game\Levels\Rising-Sun\LQ.jpg" />
     <Content Include="Resources\Images\Game\Levels\Rising-Sun\Path-Map.png" />
@@ -143,7 +144,6 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Fraction.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\GameMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Level.Enum.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Enums\ResizeMode.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Enums\Team.Enum.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\NormalizedVector.Primitive.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Primitives\Point.Primitive.ts" />
@@ -168,7 +168,10 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\BackgroundRender.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\HQ\BackgroundRender.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\HQ\PlayerRender.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\LQ\BackgroundRender.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\LQ\PlayerRender.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\Render.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />

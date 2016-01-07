@@ -4,7 +4,6 @@ import Player = require('Resources/Scripts/Game/Entities/Objects/Player.Object')
 import Camera = require('Resources/Scripts/Game/Presentation/Camera/Camera');
 import World = require('Resources/Scripts/Game/Entities/Game/World');
 
-import ResizeMode = require('Resources/Scripts/Game/Enums/ResizeMode.Enum');
 import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
 import GameMode = require('Resources/Scripts/Game/Enums/GameMode.Enum');
 import Team = require('Resources/Scripts/Game/Enums/Team.Enum');
@@ -20,7 +19,7 @@ import GameConfiguration = require('Resources/Scripts/Game/Entities/Game/GameCon
 import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 import Deathmatch = require('Resources/Scripts/Game/Entities/Game/Deathmatch');
 
-import BackgroundRender = require('Resources/Scripts/Game/Presentation/Rendering/BackgroundRender');
+import Render = require('Resources/Scripts/Game/Presentation/Rendering/Render');
 
 import ResourceLoader = require('Resources/Scripts/Game/Cache/resource-loader');
 
@@ -38,7 +37,6 @@ var json = {
     gameMode: GameMode.Deathmatch,
     configuration: {
         videoMode: VideoMode.HQ,
-        resizeMode: ResizeMode.Fit,
         origin: new Size(800, 450),
         gravity: new Vector(0, -9.8)
     }
@@ -52,7 +50,6 @@ var json = {
     // base settings
     var configuration: GameConfiguration = new GameConfiguration();
     configuration.VideoMode = json.configuration.videoMode;
-    configuration.ResizeMode = json.configuration.resizeMode;
     configuration.Gravity = json.configuration.gravity;
     configuration.Origin = json.configuration.origin;
     configuration.Relative = null;
@@ -67,18 +64,30 @@ var json = {
     if (json.gameMode === GameMode.Deathmatch) {
         window['game'] = new Deathmatch(player, objects, world, camera, configuration);
     }
+    var game = window['game'];
 
     // When cache is done...
     $('#game-cache-element').one('resources-loaded', function () {
         // Camera setup
-        window['game'].Camera.WatchUserInput(player.Position);
+        game.Camera.WatchUserInput(player.Position);
 
         // TODO: connect user input logic
 
         // Resize canvaces with content
-        BackgroundRender.Resize();
+        Render.ResizeCanvaces();
         $(window).on('resize', function () {
-            BackgroundRender.Resize();
+            var newSize = Render.ResizeCanvaces();
+
+            if (!game.Configuration.Relative) {
+                game.Configuration.Relative = newSize;
+            }
+            else {
+                game.Configuration.Relative.Width = newSize.Width;
+                game.Configuration.Relative.Height = newSize.Height;
+
+                // TODO: Recalculate cached relative sizes
+            }
+
         });
 
         // TODO: start background drawing
