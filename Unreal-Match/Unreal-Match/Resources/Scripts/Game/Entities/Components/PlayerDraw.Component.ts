@@ -13,9 +13,6 @@ import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive
 import NormalizedVector = require('Resources/Scripts/Game/Entities/Primitives/NormalizedVector.Primitive');
 
 abstract class PlayerDrawComponent extends Component {
-    /** Players fraction */
-    public Fraction: Fraction;
-
     /** Head size in origin resolution */
     public OriginHeadSize: Size;
     /** Body size in origin resolution */
@@ -115,8 +112,9 @@ abstract class PlayerDrawComponent extends Component {
         }
     }
 
+    /** Draws player */
     public Draw() {
-
+        // Implementation in child classes
     }
 }
 

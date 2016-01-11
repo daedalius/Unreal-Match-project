@@ -132,9 +132,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerAmmunition.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDrawLQ.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDrawHQ.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerTransition.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDraw.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\ComponentContainer.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\WorldDraw.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\Deathmatch.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\GameClient.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\World.ts" />
@@ -168,10 +171,6 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-cache.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-loader.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Cache\resource-type.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\HQ\BackgroundRender.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\HQ\PlayerRender.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\LQ\BackgroundRender.ts" />
-    <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\LQ\PlayerRender.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Presentation\Rendering\Render.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\howler.d.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Vendors\jquery.d.ts" />

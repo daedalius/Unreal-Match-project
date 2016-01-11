@@ -167,3 +167,9 @@
 /Unreal-Match/Unreal-Match/Resources/Scripts/Game/Presentation/Rendering/LQ/PlayerRender.js.map
 /Unreal-Match/Unreal-Match/Resources/Scripts/Game/Presentation/Rendering/LQ/PlayerRender.ts
 /Unreal-Match/Unreal-Match/game.js
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/PlayerDrawHQ.Component.js
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/PlayerDrawLQ.Component.js
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/WorldDraw.Component.js
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/PlayerDrawHQ.Component.js.map
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/PlayerDrawLQ.Component.js.map
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/WorldDraw.Component.js.map

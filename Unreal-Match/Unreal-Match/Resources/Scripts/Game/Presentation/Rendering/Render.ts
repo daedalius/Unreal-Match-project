@@ -1,8 +1,10 @@
 ﻿import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
 import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
+import Rectangle = require('Resources/Scripts/Game/Entities/Primitives/Rectangle.Primitive');
 import Camera = require('Resources/Scripts/Game/Presentation/Camera/Camera');
 import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
+import ResourceCache = require('Resources/Scripts/Game/Cache/resource-cache');
 
 class Render {
     public static ResizeCanvaces() {
@@ -57,23 +59,21 @@ class Render {
 
         return new Size(newWidth, newHeight);
     }
+    public static DrawScene() {
+        // Draw level
+        Render.DrawBackground();
 
-    private static PreviousCameraPosition: Point;
+        // Draw objects (players, items, shells)
+
+        // Draw animations
+
+        // And again
+        window.requestAnimationFrame(Render.DrawScene);
+    }
+
     private static DrawBackground() {
-        //var currentCameraPosition: Point = (<GameClient>window['game']).Camera.GetCameraPosition();
-
-        //// Prevent background redraw if cameras position doesn't changed
-        //if (BackgroundRender.PreviousCameraPosition !== undefined) {
-        //    if (BackgroundRender.PreviousCameraPosition.Equals(currentCameraPosition))
-        //    {
-        //        return;
-        //    }
-        //}
-
-        //BackgroundRender.PreviousCameraPosition = currentCameraPosition;
-
-        // Draw background
-
+        var game = <GameClient>window['game'];
+        game.World.GetComponent('WorldDraw').Trigger();
     }
 }
 

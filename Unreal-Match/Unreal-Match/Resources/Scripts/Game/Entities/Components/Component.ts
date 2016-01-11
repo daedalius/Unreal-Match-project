@@ -10,7 +10,7 @@ abstract class Component {
     public Activated: boolean;
     /** Component update function */
     public Update: Function;
-    /** Trigger update function if component are active */
+    /** Triggers update function if component are active */
     public Trigger: Function;
 
     constructor(name: string, object: GameObject) {

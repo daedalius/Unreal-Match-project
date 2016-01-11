@@ -90,8 +90,9 @@ var json = {
 
         });
 
-        // TODO: start background drawing
-        
+        // Start drawing
+        Render.DrawScene;
+
         // TODO: start network phase
 
         // TODO: initialize and hide HUD
