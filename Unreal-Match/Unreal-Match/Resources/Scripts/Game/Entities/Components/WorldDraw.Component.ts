@@ -9,19 +9,27 @@ import NormalizedVector = require('Resources/Scripts/Game/Entities/Primitives/No
 
 abstract class WorldDrawComponent extends Component {
     public ForegroundImage: HTMLImageElement;
-    public LevelImage: HTMLImageElement;
+    public ForegroundContext: CanvasRenderingContext2D;
 
+    public LevelImage: HTMLImageElement;
+    public LevelContext: CanvasRenderingContext2D;
+    
     private static PreviousCameraPosition: Point;
 
     constructor() {
         super('WorldDraw', null);
         this.ForegroundImage = ResourceCache.Image['foreground'];
+        this.ForegroundContext = (<HTMLCanvasElement>document.getElementById('game-canvas-foreground')).getContext('2d');
+
         this.LevelImage = ResourceCache.Image['map'];
+        this.LevelContext = (<HTMLCanvasElement>document.getElementById('game-canvas-level')).getContext('2d');
+
+        this.Update = this.Draw;
     }
 
     /** Draws world */
     public Draw() {
-        // Implementation in child classes
+        throw new Error('Behavior are not implemented. Called abstracts class method.')
     }
 }
 

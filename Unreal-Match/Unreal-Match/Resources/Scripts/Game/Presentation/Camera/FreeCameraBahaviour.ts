@@ -32,11 +32,10 @@ class FreeCameraBahaviour extends CameraBahaviour {
 
     /** Applies augmentation position to camera */
     private ApplyTransition() {
-        var game = (<GameClient>window['game']);
         // Check level outrange for X component...
-        this.LastPositon.X = Algorithms.Clamp(this.LastPositon.X + this.Augmentation.X, 0, game.World.Size.Width);
+        this.LastPositon.X = Algorithms.Clamp(this.LastPositon.X + this.Augmentation.X, 0, (<GameClient>window['game']).World.Size.Width);
         // ... and for Y component
-        this.LastPositon.Y = Algorithms.Clamp(this.LastPositon.Y + this.Augmentation.Y, 0, game.World.Size.Height);
+        this.LastPositon.Y = Algorithms.Clamp(this.LastPositon.Y + this.Augmentation.Y, 0, (<GameClient>window['game']).World.Size.Height);
 
         // Remove current Augmentation
         this.Augmentation.X = 0;

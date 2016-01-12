@@ -17,6 +17,9 @@ abstract class Component {
         this.Name = name;
         this.Object = object;
         this.Activated = true;
+        this.Update = function () {
+            console.log('Component has done nothing')
+        };
         this.Trigger = function () {
             if (this.Activated) {
                 this.Update();

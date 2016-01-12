@@ -6,8 +6,8 @@ import Rectangle = require('Resources/Scripts/Game/Entities/Primitives/Rectangle
 class Algorithms {
     /** Returns value if it beetween min and max. Else returns min or max */
     public static Clamp(value: number, min: number, max: number) {
-        return min <= value ? min
-             : max >= value ? max
+        return min >= value ? min
+             : max <= value ? max
              : value;
     }
 }

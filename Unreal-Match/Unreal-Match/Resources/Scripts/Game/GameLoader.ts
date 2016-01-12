@@ -36,7 +36,7 @@ var json = {
     },
     gameMode: GameMode.Deathmatch,
     configuration: {
-        videoMode: VideoMode.HQ,
+        videoMode: VideoMode.LQ,
         origin: new Size(800, 450),
         gravity: new Vector(0, -9.8)
     }
@@ -88,20 +88,12 @@ var json = {
         $(window).on('resize', function () {
             var newSize = Render.ResizeCanvaces();
 
-            if (!game.Configuration.Relative) {
-                game.Configuration.Relative = newSize;
-            }
-            else {
-                game.Configuration.Relative.Width = newSize.Width;
-                game.Configuration.Relative.Height = newSize.Height;
-
-                // TODO: Recalculate cached relative sizes
-            }
+            
 
         });
 
         // Start drawing
-        Render.DrawScene;
+        Render.DrawScene();
 
         // TODO: start network phase
 

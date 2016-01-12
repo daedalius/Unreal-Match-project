@@ -46,14 +46,27 @@ class Render {
             // Change real width
             $content.find('canvas').attr('width', newWidth)
                 .attr('height', newHeight);
+
+            // Update relative config size
+            if (!game.Configuration.Relative) {
+                game.Configuration.Relative = new Size(newWidth, newHeight);
+            }
+            else {
+                game.Configuration.Relative.Width = newWidth;
+                game.Configuration.Relative.Height = newHeight;
+
+                // TODO: Recalculate cached relative sizes
+            }
+
         }
         else {
             // Change CSS width
             $content.find('canvas').css('width', newWidth)
                 .css('height', newHeight);
-        }
 
-        // TODO: Recalculate all relative sizes according new width
+            // Update relative config size
+            game.Configuration.Relative = game.Configuration.Origin;
+        }
 
         // TODO: Synchronize current player view vector
 

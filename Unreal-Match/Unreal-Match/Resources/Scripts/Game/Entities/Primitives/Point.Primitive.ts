@@ -1,4 +1,5 @@
 ﻿import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
+import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 
 /** Present a point in two-dimentional space */
 class Point {
@@ -14,8 +15,8 @@ class Point {
     }
 
     /** Returned converted point in Cortesial CS to Screen CS for presentation on canvas */
-    public ToScreen(canvasHeight: number): Point {
-        return new Point(this.X, canvasHeight - this.Y);
+    public ToScreen(): Point {
+        return new Point(this.X, (<GameClient>window['game']).Configuration.Relative.Height - this.Y);
     }
 
     // Convert this point in Cortesial CS to Screen CS for presentation on canvas

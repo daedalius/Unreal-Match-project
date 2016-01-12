@@ -1,5 +1,6 @@
 ﻿import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 import ScreenRectangle = require('Resources/Scripts/Game/Entities/Primitives/ScreenRectangle.Primitive');
+import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
 
 /** Presents rectangle in Cartesian CS */
 class Rectangle {
@@ -54,9 +55,9 @@ class Rectangle {
     }
 
     /** Convert this rectangle in Cortesial CS to Screen CS for presentation on canvas */
-    ToScreen(canvasHeight: number): ScreenRectangle {
-        var newStartPoint: Point = new Point(this.Start.X, canvasHeight - this.Start.Y);
-        var newEndPoint: Point = new Point(this.End.X, canvasHeight - this.End.Y);
+    ToScreen(): ScreenRectangle {
+        var newStartPoint: Point = new Point(this.Start.X, (<GameClient>window['game']).Configuration.Relative.Height - this.Start.Y);
+        var newEndPoint: Point = new Point(this.End.X, (<GameClient>window['game']).Configuration.Relative.Height - this.End.Y);
 
         return new ScreenRectangle(newStartPoint, newEndPoint);
     }
