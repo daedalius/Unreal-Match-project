@@ -173,3 +173,5 @@
 /Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/PlayerDrawHQ.Component.js.map
 /Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/PlayerDrawLQ.Component.js.map
 /Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/WorldDraw.Component.js.map
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/*.js
+/Unreal-Match/Unreal-Match/Resources/Scripts/Game/Entities/Components/*.map

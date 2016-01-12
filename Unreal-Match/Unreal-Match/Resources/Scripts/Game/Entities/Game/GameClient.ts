@@ -29,9 +29,6 @@ abstract class GameClient extends ComponentContainer {
         this.World = world;
         this.Camera = camera;
         this.Configuration = configuration;
-
-        ResourceLoader.LoadBaseBundle(this.Configuration.VideoMode);
-        ResourceLoader.LoadLevelBundle(this.Configuration.VideoMode, this.World.Level);
     }
 }
 

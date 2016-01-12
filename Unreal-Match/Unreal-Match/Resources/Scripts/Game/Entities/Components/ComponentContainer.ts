@@ -11,13 +11,14 @@ abstract class ComponentContainer {
 
     /** Get component of GameObject by name */
     public GetComponent = function (name: string): Component {
+        var result: Component = null;
         this.Components.forEach(function (itemComponent, index) {
             if (itemComponent.Name === name) {
-                return itemComponent;
+                result = itemComponent;
             }
         });
 
-        return null;
+        return result;
     }
 
     /** Add component to GameObject */

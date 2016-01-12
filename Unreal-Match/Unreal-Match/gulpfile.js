@@ -76,6 +76,8 @@ gulp.task('cite-copy', function() {
 
 // gulp full-deploy
 gulp.task('full-deploy', ['ui-css', 'concat-ui-css', 'concat-ui-js', 'uglify-ui-js', 'game-css', 'game-ts', 'cite-copy']);
+// gulp local deploy (for Visual Studio server)
+gulp.task('local-deploy', ['ui-css', 'concat-ui-css', 'concat-ui-js', 'uglify-ui-js', 'game-css', 'game-ts']);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////

@@ -3,7 +3,9 @@ import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive
 import Point = require('Resources/Scripts/Game/Entities/Primitives/Point.Primitive');
 
 class PlayerDrawLQComponent extends PlayerDrawComponent {
-
+    constructor(object) {
+        super(object);
+    }
 }
 
 export = PlayerDrawLQComponent;

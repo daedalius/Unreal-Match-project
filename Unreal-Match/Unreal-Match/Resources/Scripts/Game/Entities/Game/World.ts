@@ -5,6 +5,8 @@ import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
 
 import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
 import ComponentContainer = require('Resources/Scripts/Game/Entities/Components/ComponentContainer');
+import WorldDrawLQComponent = require('Resources/Scripts/Game/Entities/Components/WorldDrawLQ.Component');
+import WorldDrawHQComponent = require('Resources/Scripts/Game/Entities/Components/WorldDrawHQ.Component');
 
 class World extends ComponentContainer {
     /** Game level */
@@ -23,7 +25,7 @@ class World extends ComponentContainer {
         this.PassMap = passMap;
 
         var game = <GameClient>window['game'];
-        this.AddComponent(game.Configuration.VideoMode === VideoMode.LQ ? new PlayerDrawLQComponent(this) : new PlayerDrawHQComponent(this));
+        this.AddComponent(game.Configuration.VideoMode === VideoMode.LQ ? new WorldDrawLQComponent() : new WorldDrawHQComponent());
     }
 }
 

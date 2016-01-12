@@ -138,6 +138,8 @@
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\PlayerDraw.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\ComponentContainer.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\WorldDraw.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\WorldDrawHQ.Component.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Components\WorldDrawLQ.Component.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\Deathmatch.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\GameClient.ts" />
     <TypeScriptCompile Include="Resources\Scripts\Game\Entities\Game\World.ts" />

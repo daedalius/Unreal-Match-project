@@ -54,6 +54,12 @@ var json = {
     configuration.Origin = json.configuration.origin;
     configuration.Relative = null;
 
+    // TODO: think about better decision
+    // Temp configuration for crating entities
+    window['game'] = {
+        'Configuration': configuration
+    }; 
+
     // implementation of GameClient
     var player = new Player(1, json.player.position, json.player.team, json.player.character);
     var world = new World(json.world.level, json.world.size, json.world.passMap);
@@ -65,6 +71,10 @@ var json = {
         window['game'] = new Deathmatch(player, objects, world, camera, configuration);
     }
     var game = window['game'];
+
+    // TODO: separate this
+    ResourceLoader.LoadBaseBundle(configuration.VideoMode);
+    ResourceLoader.LoadLevelBundle(configuration.VideoMode, world.Level);
 
     // When cache is done...
     $('#game-cache-element').one('resources-loaded', function () {

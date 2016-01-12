@@ -1,4 +1,5 @@
 ﻿import VideoMode = require('Resources/Scripts/Game/Enums/VideoMode.Enum');
+import Level = require('Resources/Scripts/Game/Enums/Level.Enum');
 import Size = require('Resources/Scripts/Game/Entities/Primitives/Size.Primitive');
 import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
 
