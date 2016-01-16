@@ -32,7 +32,8 @@ var json = {
     world: {
         level: Level.RisingSun,
         size: new Size(3832, 1423),
-        passMap: []
+        passMap: [],
+        foregroundRatio: 0.666667
     },
     gameMode: GameMode.Deathmatch,
     configuration: {
@@ -58,26 +59,27 @@ var json = {
     // Temp configuration for crating entities
     window['game'] = {
         'Configuration': configuration
-    }; 
-
-    // implementation of GameClient
-    var player = new Player(1, json.player.position, json.player.team, json.player.character);
-    var world = new World(json.world.level, json.world.size, json.world.passMap);
-    var camera = new Camera();
-    var objects = new Array<GameObject>();
-    objects.push(player);
-
-    if (json.gameMode === GameMode.Deathmatch) {
-        window['game'] = new Deathmatch(player, objects, world, camera, configuration);
-    }
-    var game = window['game'];
+    };
 
     // TODO: separate this
-    ResourceLoader.LoadBaseBundle(configuration.VideoMode);
-    ResourceLoader.LoadLevelBundle(configuration.VideoMode, world.Level);
+    ResourceLoader.LoadBaseBundle(json.configuration.videoMode);
+    ResourceLoader.LoadLevelBundle(json.configuration.videoMode, json.world.level);
 
     // When cache is done...
     $('#game-cache-element').one('resources-loaded', function () {
+
+        // implementation of GameClient
+        var player = new Player(1, json.player.position, json.player.team, json.player.character);
+        var world = new World(json.world.level, json.world.size, json.world.passMap, json.world.foregroundRatio);
+        var camera = new Camera();
+        var objects = new Array<GameObject>();
+        objects.push(player);
+
+        if (json.gameMode === GameMode.Deathmatch) {
+            window['game'] = new Deathmatch(player, objects, world, camera, configuration);
+        }
+        var game = window['game'];
+
         // Camera setup
         game.Camera.WatchUserInput(player.Position);
 
@@ -86,10 +88,7 @@ var json = {
         // Resize canvaces with content
         Render.ResizeCanvaces();
         $(window).on('resize', function () {
-            var newSize = Render.ResizeCanvaces();
-
-            
-
+            Render.ResizeCanvaces();
         });
 
         // Start drawing

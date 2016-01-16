@@ -1,5 +1,6 @@
 ﻿import Vector = require('Resources/Scripts/Game/Entities/Primitives/Vector.Primitive');
 import GameClient = require('Resources/Scripts/Game/Entities/Game/GameClient');
+import Camera = require('Resources/Scripts/Game/Presentation/Camera/Camera');
 
 /** Present a point in two-dimentional space */
 class Point {

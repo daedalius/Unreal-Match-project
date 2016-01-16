@@ -18,11 +18,12 @@ class World extends ComponentContainer {
     /** Worlds passability map */
     public PassMap: Array<Array<boolean>>
 
-    constructor(level, size, passMap) {
+    constructor(level, size, passMap, foregroundRatio) {
         super();
         this.Level = level;
         this.Size = size;
         this.PassMap = passMap;
+        this.ForegroundRatio = foregroundRatio;
 
         var game = <GameClient>window['game'];
         this.AddComponent(game.Configuration.VideoMode === VideoMode.LQ ? new WorldDrawLQComponent() : new WorldDrawHQComponent());
