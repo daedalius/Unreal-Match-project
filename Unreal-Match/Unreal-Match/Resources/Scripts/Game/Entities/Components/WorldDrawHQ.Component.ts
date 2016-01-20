@@ -30,7 +30,14 @@ class WorldDrawHQComponent extends WorldDrawComponent {
         var game = (<GameClient>window['game']);
         this.LevelContext.clearRect(0, 0, game.Configuration.Relative.Width, game.Configuration.Relative.Height);
 
-        // TODO: implement HQ draw logic
+        // Drawing
+        var cameraStart = game.Camera.GetRectangle().Start;
+
+        this.LevelContext.drawImage(this.LevelImage,
+            cameraStart.X * game.World.MapQuality, (game.World.Size.Height - cameraStart.Y - game.Configuration.Origin.Height) * game.World.MapQuality,
+            game.Configuration.Origin.Width * game.World.MapQuality, game.Configuration.Origin.Height * game.World.MapQuality,
+            0, 0,
+            game.Configuration.Relative.Width, game.Configuration.Relative.Height);
     }
 }
 

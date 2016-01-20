@@ -33,11 +33,13 @@ var json = {
         level: Level.RisingSun,
         size: new Size(3832, 1423),
         passMap: [],
-        foregroundRatio: 0.666667
+        foregroundRatio: 0.666667,
+        // means how many times level in HQ bigger than his size
+        mapQuality: 1.5
     },
     gameMode: GameMode.Deathmatch,
     configuration: {
-        videoMode: VideoMode.LQ,
+        videoMode: VideoMode.HQ,
         origin: new Size(800, 450),
         gravity: new Vector(0, -9.8)
     }
@@ -70,7 +72,7 @@ var json = {
 
         // implementation of GameClient
         var player = new Player(1, json.player.position, json.player.team, json.player.character);
-        var world = new World(json.world.level, json.world.size, json.world.passMap, json.world.foregroundRatio);
+        var world = new World(json.world.level, json.world.size, json.world.passMap, json.world.mapQuality, json.world.foregroundRatio);
         var camera = new Camera();
         var objects = new Array<GameObject>();
         objects.push(player);

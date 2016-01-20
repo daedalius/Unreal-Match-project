@@ -13,16 +13,19 @@ class World extends ComponentContainer {
     public Level: Level;
     /** World size*/
     public Size: Size;
-    /** Size of foreground relatively level width */
+    /** Means how many times level image in HQ bigger than his size */
+    public MapQuality: number;
+    /** Means how many times foreground image in HQ bigger than level size */
     public ForegroundRatio: number;
     /** Worlds passability map */
     public PassMap: Array<Array<boolean>>
 
-    constructor(level, size, passMap, foregroundRatio) {
+    constructor(level, size, passMap, mapRatio, foregroundRatio) {
         super();
         this.Level = level;
         this.Size = size;
         this.PassMap = passMap;
+        this.MapQuality = mapRatio;
         this.ForegroundRatio = foregroundRatio;
 
         var game = <GameClient>window['game'];
