@@ -24,6 +24,15 @@ abstract class PlayerDrawComponent extends Component {
     /** Maximum weapon size in origin resolution */
     public OriginWeaponSize: Size;
 
+    /** Y offset to team color on head sprite */
+    public TeamColorHeadYOffset: number;
+    /** Y offset to team color on hand sprite */
+    public TeamColorHandYOffset: number;
+    /** Y offset to team color on body sprite */
+    public TeamColorBodyYOffset: number;
+    /** Y offset to team color on legs sprite */
+    public TeamColorLegsYOffset: number;
+
     /** Relative position of neck socket on head sprite */
     public NeckSocketOnHead: NormalizedVector;
     /** Relative position of neck socket on body sprite */
@@ -98,7 +107,7 @@ abstract class PlayerDrawComponent extends Component {
         this.OriginHandsSize = new Size(34, 14);    // after that 2px splitter by y
         this.OriginLegsSize = new Size(91, 54);     // after that 2px splitter by y
         this.OriginWeaponSize = new Size(55, 20);   // after that 2px splitter by y
-        
+
         this.NeckSocketOnHead = new NormalizedVector(0.5, 0.6);
         this.NeckSocketOnBody = new NormalizedVector(0.5, 0.77);
         this.ShoulderSocketOnHand = new NormalizedVector(0.1, 0.19);

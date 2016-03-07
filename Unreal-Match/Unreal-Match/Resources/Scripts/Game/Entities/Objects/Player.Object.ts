@@ -27,6 +27,7 @@ class Player extends GameObject {
     constructor(id: number, position: Point, team: Team, character: Character) {
         super(id, position);
         this.Fraction = Player.GetFraction(character);
+        this.Team = team;
 
         var game = <GameClient>window['game'];
         this.AddComponent(game.Configuration.VideoMode === VideoMode.LQ ? new PlayerDrawLQComponent(this) : new PlayerDrawHQComponent(this));
