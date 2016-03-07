@@ -64,7 +64,7 @@ class ResourceLoader {
         switch (level) {
             case Level.RisingSun: {
                 ResourceCache.Add(ResourceType.AudioResource, 'menu-theme', '/Resources/Sounds/Game/Levels/Rising-Sun', 2000);
-                ResourceCache.Add(ResourceType.ImageResource, 'map', '/Resources/Images/Game/Levels/Rising-Sun/LQ.jpg', 2650);
+                ResourceCache.Add(ResourceType.ImageResource, 'map', '/Resources/Images/Game/Levels/Rising-Sun/LQ.jpg', 1280);
                 break;
             }
         }

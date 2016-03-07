@@ -27,19 +27,19 @@ var json = {
     player: {
         character: Character.Lauren,
         team: Team.Red,
-        position: new Point(1916, 711)
+        position: new Point(1323, 700)
     },
     world: {
         level: Level.RisingSun,
-        size: new Size(3832, 1423),
+        size: new Size(2874, 1067),
         passMap: [],
         foregroundRatio: 0.666667,
         // means how many times level in HQ bigger than his size
-        mapQuality: 1.5
+        mapQuality: 2
     },
     gameMode: GameMode.Deathmatch,
     configuration: {
-        videoMode: VideoMode.LQ,
+        videoMode: VideoMode.HQ,
         origin: new Size(800, 450),
         gravity: new Vector(0, -9.8)
     }
