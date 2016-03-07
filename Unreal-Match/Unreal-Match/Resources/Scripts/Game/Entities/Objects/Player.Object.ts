@@ -26,8 +26,38 @@ class Player extends GameObject {
 
     constructor(id: number, position: Point, team: Team, character: Character) {
         super(id, position);
+        this.Fraction = Player.GetFraction(character);
+
         var game = <GameClient>window['game'];
         this.AddComponent(game.Configuration.VideoMode === VideoMode.LQ ? new PlayerDrawLQComponent(this) : new PlayerDrawHQComponent(this));
+    }
+
+    private static GetFraction(character: Character) {
+        switch (character) {
+            case Character.Lauren: {
+            }
+            case Character.Blackjack: {
+                return Fraction.Guard;
+            }
+
+            case Character.Reaper: {
+            }
+            case Character.Othello: {
+                return Fraction.Ronin;
+            }
+
+            case Character.Akasha: {
+            }
+            case Character.Loque: {
+                return Fraction.Necris;
+            }
+
+            case Character.Matrix: {
+            }
+            case Character.Nova: {
+                return Fraction.Liandri;
+            }
+        }
     }
 }
 

@@ -77,11 +77,23 @@ class Render {
         Render.DrawBackground();
 
         // Draw objects (players, items, shells)
+        Render.ClearObjects();
+        // Render.DrawOtherPlayers();
+        Render.DrawPlayer();
 
         // Draw animations
 
         // And again
         window.requestAnimationFrame(Render.DrawScene);
+    }
+
+    private static DrawPlayer() {
+        var game = <GameClient>window['game'];
+        game.Player.GetComponent('PlayerDraw').Trigger();
+    }
+
+    private static ClearObjects() {
+        (<HTMLCanvasElement>document.getElementById('game-canvas-objects')).getContext('2d').clearRect(0, 0, (<GameClient>window['game']).Configuration.Relative.Width, (<GameClient>window['game']).Configuration.Relative.Height);
     }
 
     private static DrawBackground() {

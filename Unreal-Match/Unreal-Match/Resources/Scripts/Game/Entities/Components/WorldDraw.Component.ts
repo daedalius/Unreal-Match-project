@@ -19,7 +19,7 @@ abstract class WorldDrawComponent extends Component {
     constructor() {
         super('WorldDraw', null);
 
-        this.LevelImage = ResourceCache.Image['map'][0];
+        this.LevelImage = ResourceCache.Image['map'];
         this.LevelContext = (<HTMLCanvasElement>document.getElementById('game-canvas-level')).getContext('2d');
 
         this.Update = this.Draw;

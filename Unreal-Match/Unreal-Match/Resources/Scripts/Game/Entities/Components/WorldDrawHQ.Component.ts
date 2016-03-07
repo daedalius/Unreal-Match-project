@@ -18,11 +18,25 @@ class WorldDrawHQComponent extends WorldDrawComponent {
     }
 
     private DrawForeground() {
+        /*
         // Cleaning canvas
         var game = (<GameClient>window['game']);
         this.ForegroundContext.clearRect(0, 0, game.Configuration.Relative.Width, game.Configuration.Relative.Height);
 
-        // TODO: implement HQ draw logic
+        // Drawing
+        // INFO: check sizes with rather than rising sun foreground
+        var cameraStart = game.Camera.GetRectangle().Start;
+        var mult = (game.World.Size.Width - game.Configuration.Origin.Width) / game.World.Size.Width;
+        this.ForegroundContext.drawImage(this.ForegroundImage,
+            // begin of drawing image
+            cameraStart.X * game.World.MapQuality * game.World.MapQuality * game.World.ForegroundRatio * mult, (game.World.Size.Height - cameraStart.Y - game.Configuration.Origin.Height) * game.World.MapQuality * game.World.MapQuality * game.World.ForegroundRatio,
+            // size of drawing image
+            game.Configuration.Origin.Width / game.World.ForegroundRatio, game.Configuration.Origin.Height / game.World.ForegroundRatio,
+            // zero offsets
+            0, 0,
+            // size of image on canvas
+            game.Configuration.Relative.Width, game.Configuration.Relative.Height);
+        */
     }
 
     private DrawLevel() {

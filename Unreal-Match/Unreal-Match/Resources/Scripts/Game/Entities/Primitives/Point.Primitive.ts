@@ -25,13 +25,16 @@ class Point {
         this.Y = canvasHeight - this.Y;
     }
 
-    //// In Cortesian CS
-    //public Translate(): Point {
-    //    var x: number = (this.X - FrameOffset.X) / Sizes.CanvasDefault.Width * Sizes.Canvas.Width;
-    //    var y: number = (this.Y - FrameOffset.Y) / Sizes.CanvasDefault.Height * Sizes.Canvas.Height;
+    /** Performs framing transformation */
+    public Frame(): Point {
+        var game = (<GameClient>window['game']);
+        var cameraRectangle = game.Camera.GetRectangle();
 
-    //    return new Point(x, y);
-    //}
+        var x: number = (this.X - cameraRectangle.Start.X) / game.Configuration.Origin.Width * game.Configuration.Relative.Width;
+        var y: number = game.Configuration.Relative.Height - (this.Y - cameraRectangle.Start.Y) / game.Configuration.Origin.Height * game.Configuration.Relative.Height;
+
+        return new Point(x, y);
+    }
 
     // Subtraction points is a vector
     public Substract(subtrahend: Point): Vector {

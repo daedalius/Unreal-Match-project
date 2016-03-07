@@ -15,7 +15,7 @@ class World extends ComponentContainer {
     public Size: Size;
     /** Means how many times level image in HQ bigger than his size */
     public MapQuality: number;
-    /** Means how many times foreground image in HQ bigger than level size */
+    /** Means how many times foreground image in HQ bigger than level image in HQ */
     public ForegroundRatio: number;
     /** Worlds passability map */
     public PassMap: Array<Array<boolean>>

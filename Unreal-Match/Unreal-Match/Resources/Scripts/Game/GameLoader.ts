@@ -27,7 +27,7 @@ var json = {
     player: {
         character: Character.Lauren,
         team: Team.Red,
-        position: new Point(500, 500)
+        position: new Point(1916, 711)
     },
     world: {
         level: Level.RisingSun,
@@ -39,7 +39,7 @@ var json = {
     },
     gameMode: GameMode.Deathmatch,
     configuration: {
-        videoMode: VideoMode.HQ,
+        videoMode: VideoMode.LQ,
         origin: new Size(800, 450),
         gravity: new Vector(0, -9.8)
     }
@@ -83,7 +83,7 @@ var json = {
         var game = window['game'];
 
         // Camera setup
-        game.Camera.WatchUserInput(player.Position);
+        game.Camera.WatchUserInput(new Point(player.Position.X, player.Position.Y));
 
         // TODO: connect user input logic
 

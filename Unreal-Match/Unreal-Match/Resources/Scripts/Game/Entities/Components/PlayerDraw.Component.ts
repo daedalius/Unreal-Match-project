@@ -35,6 +35,9 @@ abstract class PlayerDrawComponent extends Component {
     /** Relative position of legs socket on body sprite */
     public LegsSocketOnBody: NormalizedVector;
 
+    /** Context to draw players */
+    public Context: CanvasRenderingContext2D;
+
     /** Cached player head image */
     public HeadSprite: HTMLImageElement;
     /** Cached player body image */
@@ -86,6 +89,8 @@ abstract class PlayerDrawComponent extends Component {
 
     constructor(object: GameObject) {
         super('PlayerDraw', object);
+        this.Update = this.Draw;
+        this.Context = (<HTMLCanvasElement>document.getElementById('game-canvas-objects')).getContext('2d');
 
         // TODO: use configuration file
         this.OriginHeadSize = new Size(20, 18);     // after that 2px splitter by y

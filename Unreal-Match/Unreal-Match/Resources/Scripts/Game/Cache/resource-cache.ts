@@ -62,7 +62,7 @@ class ResourceCache {
                     }
                     case 'Image': {
                         loadedResource = ResourceCache.Items.Image[loadedResourceName];
-                        ResourceCache.Image[loadedResource["Name"]] = loadedResource["Item"];
+                        ResourceCache.Image[loadedResource["Name"]] = loadedResource["Item"][0];
                         ResourceCache.LoadedWeight += loadedResource['Weight'];
                         break;
                     }
